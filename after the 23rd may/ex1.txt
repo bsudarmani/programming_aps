@@ -1,0 +1,979 @@
+Here are **15 carefully designed recursion-based "find the output" questions** involving **nested loops**, **arrays**, and **multiple recursive method calls** from `main()`. These are great for practicing **recursion tracing**, **memory understanding**, and **stack behavior**.
+
+---
+
+## 🔁 **15 Recursion-Based "Find the Output" Questions**
+
+### 📘 Question 1: Simple Recursion
+
+```cpp
+int fun(int n) {
+    if(n == 0) return 0;
+    return n + fun(n - 1);
+}
+
+int main() {
+    cout << fun(5);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 2: Recursive Factorial
+
+```cpp
+int fact(int n) {
+    if(n <= 1) return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    int sum = 0;
+    for(int i = 1; i <= 4; i++) {
+        sum += fact(i);
+    }
+    cout << sum;
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 3: Multiple Recursive Calls
+
+```cpp
+int count(int n) {
+    if(n == 0) return 1;
+    return count(n - 1) + count(n - 1);
+}
+
+int main() {
+    cout << count(3);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 4: Array Sum Using Recursion
+
+```cpp
+int sum(int arr[], int n) {
+    if(n == 0) return 0;
+    return arr[n - 1] + sum(arr, n - 1);
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << sum(arr, 5);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 5: Fibonacci with Loop
+
+```cpp
+int fib(int n) {
+    if(n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    for(int i = 0; i < 5; i++) {
+        cout << fib(i) << " ";
+    }
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 6: Recursive Reverse Print
+
+```cpp
+void printReverse(int arr[], int i, int n) {
+    if(i >= n) return;
+    printReverse(arr, i + 1, n);
+    cout << arr[i] << " ";
+}
+
+int main() {
+    int arr[] = {10, 20, 30, 40};
+    printReverse(arr, 0, 4);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 7: Nested Recursion
+
+```cpp
+int fun(int n) {
+    if(n > 100) return n - 10;
+    return fun(fun(n + 11));
+}
+
+int main() {
+    cout << fun(95);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 8: Recursion with Post-Increment
+
+```cpp
+int fun(int n) {
+    if(n == 0) return 0;
+    int res = fun(n - 1);
+    cout << n << " ";
+    return res;
+}
+
+int main() {
+    fun(3);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 9: Print Stars Recursively
+
+```cpp
+void printStars(int n) {
+    if(n == 0) return;
+    printStars(n - 1);
+    for(int i = 0; i < n; i++) cout << "*";
+    cout << endl;
+}
+
+int main() {
+    printStars(3);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 10: Array Update Recursively
+
+```cpp
+void update(int arr[], int i, int n) {
+    if(i == n) return;
+    arr[i] *= 2;
+    update(arr, i + 1, n);
+}
+
+int main() {
+    int arr[] = {1, 2, 3};
+    update(arr, 0, 3);
+    for(int i = 0; i < 3; i++) cout << arr[i] << " ";
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 11: Recursive Count in Loop
+
+```cpp
+int count(int n) {
+    if(n == 0) return 0;
+    return 1 + count(n / 2);
+}
+
+int main() {
+    for(int i = 1; i <= 4; i++) {
+        cout << count(i) << " ";
+    }
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 12: Nested Recursive Call with Loop
+
+```cpp
+int magic(int x) {
+    if(x == 1) return 1;
+    return x + magic(x - 1);
+}
+
+int main() {
+    for(int i = 1; i <= 3; i++) {
+        cout << magic(i) << " ";
+    }
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 13: Reverse Digits Recursively
+
+```cpp
+void reverseDigits(int n) {
+    if(n == 0) return;
+    cout << n % 10;
+    reverseDigits(n / 10);
+}
+
+int main() {
+    reverseDigits(1234);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 14: Recursive Even-Odd Sum Separately
+
+```cpp
+void evenOddSum(int arr[], int n, int& evenSum, int& oddSum, int i = 0) {
+    if(i == n) return;
+    if(arr[i] % 2 == 0) evenSum += arr[i];
+    else oddSum += arr[i];
+    evenOddSum(arr, n, evenSum, oddSum, i + 1);
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int evenSum = 0, oddSum = 0;
+    evenOddSum(arr, 5, evenSum, oddSum);
+    cout << evenSum << " " << oddSum;
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+### 📘 Question 15: Recursive Min in Array
+
+```cpp
+int findMin(int arr[], int n, int i = 0) {
+    if(i == n - 1) return arr[i];
+    return min(arr[i], findMin(arr, n, i + 1));
+}
+
+int main() {
+    int arr[] = {9, 3, 7, 1, 8};
+    cout << findMin(arr, 5);
+}
+```
+
+📌 Expected Output: ?
+
+---
+
+Would you like:
+
+* ✅ Answer key with explanations?
+* 🧪 Convert these into a **practice test format (PDF or HTML)**?
+* 🛠️ Turn a few of these into **Kotlin, Java, or Python** versions?
+
+Let me know how you’d like to use them!
+
+
+
+
+
+Great! Here's a set of **15 Java "Find the Output" Questions** involving:
+
+* ✅ Arrays
+* ✅ Multiple `for` loops
+* ✅ Function parameter passing (by value/reference)
+* ✅ **Recursion**
+
+These problems are ideal for mastering Java logic, recursion tracing, memory behavior, and nested loops.
+
+---
+
+## 🔁 **15 Java Output Questions — Recursion, Arrays, Loops, Function Calls**
+
+---
+
+### ✅ **Question 1: Recursive Sum of Array**
+
+```java
+public class Q1 {
+    static int sum(int[] arr, int index) {
+        if (index == arr.length) return 0;
+        return arr[index] + sum(arr, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        System.out.println(sum(arr, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 2: Array + Recursion + Nested Loops**
+
+```java
+public class Q2 {
+    static int calc(int x) {
+        if (x <= 1) return 1;
+        return x * calc(x - 1);
+    }
+
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 3; i++) {
+            sum += calc(i);
+        }
+        System.out.println(sum);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 3: Modify Array Recursively**
+
+```java
+public class Q3 {
+    static void multiply(int[] arr, int index) {
+        if (index == arr.length) return;
+        arr[index] *= 2;
+        multiply(arr, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] data = {1, 2, 3};
+        multiply(data, 0);
+        for (int n : data) System.out.print(n + " ");
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 4: Pass-by-Value Check**
+
+```java
+public class Q4 {
+    static void change(int a) {
+        a = a + 5;
+    }
+
+    public static void main(String[] args) {
+        int x = 10;
+        change(x);
+        System.out.println(x);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 5: Recursive Max of Array**
+
+```java
+public class Q5 {
+    static int findMax(int[] arr, int i) {
+        if (i == arr.length - 1) return arr[i];
+        return Math.max(arr[i], findMax(arr, i + 1));
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 9, 3, 7};
+        System.out.println(findMax(arr, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 6: Nested Loop in Recursive Function**
+
+```java
+public class Q6 {
+    static void printStars(int n) {
+        if (n == 0) return;
+        printStars(n - 1);
+        for (int i = 0; i < n; i++) System.out.print("*");
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        printStars(3);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 7: Count Recursively in Nested Loop**
+
+```java
+public class Q7 {
+    static int count(int x) {
+        if (x == 0) return 0;
+        return 1 + count(x / 2);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 4; i++) {
+            System.out.print(count(i) + " ");
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 8: Print Array in Reverse using Recursion**
+
+```java
+public class Q8 {
+    static void reversePrint(int[] arr, int i) {
+        if (i < 0) return;
+        System.out.print(arr[i] + " ");
+        reversePrint(arr, i - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30};
+        reversePrint(arr, arr.length - 1);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 9: Multiple Functions Calling Each Other**
+
+```java
+public class Q9 {
+    static int funA(int n) {
+        if (n <= 1) return 1;
+        return n + funB(n - 1);
+    }
+
+    static int funB(int n) {
+        if (n <= 1) return 1;
+        return n + funA(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(funA(4));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 10: Array Palindrome Check Recursively**
+
+```java
+public class Q10 {
+    static boolean isPalindrome(int[] arr, int start, int end) {
+        if (start >= end) return true;
+        if (arr[start] != arr[end]) return false;
+        return isPalindrome(arr, start + 1, end - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 2, 1};
+        System.out.println(isPalindrome(arr, 0, arr.length - 1));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 11: Print Sum of Diagonal in Matrix Recursively**
+
+```java
+public class Q11 {
+    static int diagonalSum(int[][] matrix, int i) {
+        if (i == matrix.length) return 0;
+        return matrix[i][i] + diagonalSum(matrix, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[][] mat = {{1, 2}, {3, 4}};
+        System.out.println(diagonalSum(mat, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 12: Function Recursion and Loop**
+
+```java
+public class Q12 {
+    static int squareSum(int n) {
+        if (n == 0) return 0;
+        return (n * n) + squareSum(n - 1);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            System.out.print(squareSum(i) + " ");
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 13: Recursively Find Even Sum**
+
+```java
+public class Q13 {
+    static int evenSum(int[] arr, int i) {
+        if (i == arr.length) return 0;
+        return (arr[i] % 2 == 0 ? arr[i] : 0) + evenSum(arr, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 4, 5, 6};
+        System.out.println(evenSum(a, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 14: Reverse Number Using Recursion**
+
+```java
+public class Q14 {
+    static void reverse(int n) {
+        if (n == 0) return;
+        System.out.print(n % 10);
+        reverse(n / 10);
+    }
+
+    public static void main(String[] args) {
+        reverse(123);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Question 15: Recursion with Loop inside**
+
+```java
+public class Q15 {
+    static int complex(int x) {
+        if (x == 0) return 1;
+        int val = 0;
+        for (int i = 0; i < x; i++) {
+            val += complex(x - 1);
+        }
+        return val;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(complex(3));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+Would you like:
+
+* ✅ **Answers + explanations** for each?
+* 📝 Convert this into a printable **PDF test**?
+* 👨‍💻 Convert to Kotlin or Python?
+
+Let me know!
+
+
+
+
+Perfect! Below are **15 Java "Find the Output" questions** that use **arrays**, **functions (with parameter passing)**, **recursion**, and **nested `for` loops**. These are designed to test your understanding of control flow, recursion behavior, and array manipulation.
+
+---
+
+## 🔁 15 Java Output Questions — **Nested Loops**, **Array**, **Recursion**, **Functions**
+
+---
+
+### ✅ **Q1: Simple Nested Loop on Array**
+
+```java
+public class Q1 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(arr[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q2: Nested Loop with Function Call**
+
+```java
+public class Q2 {
+    static int square(int x) {
+        return x * x;
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(square(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q3: Array Passed in Recursive Function**
+
+```java
+public class Q3 {
+    static void printRev(int[] arr, int i) {
+        if (i < 0) return;
+        System.out.print(arr[i] + " ");
+        printRev(arr, i - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6};
+        printRev(nums, nums.length - 1);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q4: Nested Loop with Accumulated Sum**
+
+```java
+public class Q4 {
+    public static void main(String[] args) {
+        int total = 0;
+        for (int i = 1; i <= 2; i++) {
+            for (int j = 1; j <= 2; j++) {
+                total += i + j;
+            }
+        }
+        System.out.println(total);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q5: Recursively Sum Diagonal of 2D Array**
+
+```java
+public class Q5 {
+    static int diagonalSum(int[][] mat, int i) {
+        if (i == mat.length) return 0;
+        return mat[i][i] + diagonalSum(mat, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = {{1, 2}, {3, 4}};
+        System.out.println(diagonalSum(matrix, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q6: Nested Loop with Factorial Function**
+
+```java
+public class Q6 {
+    static int fact(int n) {
+        if (n == 0) return 1;
+        return n * fact(n - 1);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            System.out.print(fact(i) + " ");
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q7: Print Array in 2D Pattern**
+
+```java
+public class Q7 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                System.out.print(arr[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q8: Reverse 2D Array**
+
+```java
+public class Q8 {
+    public static void main(String[] args) {
+        int[][] mat = {
+            {1, 2},
+            {3, 4}
+        };
+
+        for (int i = mat.length - 1; i >= 0; i--) {
+            for (int j = mat[0].length - 1; j >= 0; j--) {
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q9: Pass Array to Recursive Function for Even Sum**
+
+```java
+public class Q9 {
+    static int evenSum(int[] arr, int i) {
+        if (i == arr.length) return 0;
+        return (arr[i] % 2 == 0 ? arr[i] : 0) + evenSum(arr, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 4, 6, 3};
+        System.out.println(evenSum(arr, 0));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q10: Nested Loop with Function Return**
+
+```java
+public class Q10 {
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 2; i++) {
+            for (int j = 1; j <= 2; j++) {
+                System.out.print(multiply(i, j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q11: Recursive Count Function Called Inside Nested Loop**
+
+```java
+public class Q11 {
+    static int count(int n) {
+        if (n == 0) return 0;
+        return 1 + count(n / 2);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(count(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q12: Recursive Print in Pattern**
+
+```java
+public class Q12 {
+    static void printPattern(int row) {
+        if (row == 0) return;
+        printPattern(row - 1);
+        for (int i = 0; i < row; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        printPattern(3);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q13: Array Sum Using Nested Loops**
+
+```java
+public class Q13 {
+    public static void main(String[] args) {
+        int[] a = {1, 2};
+        int sum = 0;
+        for (int i : a) {
+            for (int j : a) {
+                sum += i + j;
+            }
+        }
+        System.out.println(sum);
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q14: Recursion with Multiple Nested Calls**
+
+```java
+public class Q14 {
+    static int mystery(int n) {
+        if (n <= 1) return 1;
+        return mystery(n - 1) + mystery(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(mystery(5));
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+### ✅ **Q15: Nested Loop with Conditional Break**
+
+```java
+public class Q15 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] == 2) break;
+                System.out.print(arr[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+📌 Output: ?
+
+---
+
+Would you like:
+
+* ✅ **Answers** and **step-by-step explanation** for these?
+* 📄 Convert into a **PDF test sheet** or **interactive quiz**?
+
+Let me know how you'd like to proceed!
+
+

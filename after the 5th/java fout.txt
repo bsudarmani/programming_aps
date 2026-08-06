@@ -1,0 +1,201 @@
+Great! You're asking to take these tricky Java output-based questions into **Zoho-style questions**, right?
+
+Here's what I’ll do for you:
+
+✅ Convert these **30 tricky Java output-based questions** into a format suitable for **Zoho interview preparation**  
+✅ Ensure the format is **concise**, **output-oriented**, and focuses on **concept traps**  
+✅ Each question will be a **code snippet** followed by:  
+> **Q: What will be the output of the following code?**
+
+---
+
+### ✅ **Zoho-Style Tricky Java Output-Based Questions**
+
+---
+
+**1️⃣ Recursive Try-Finally Trap**
+```java
+public class Test {
+    public static int call(int x) {
+        try {
+            return call(x++);
+        } finally {
+            System.out.println("Finally: " + x);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(call(1));
+    }
+}
+```
+**Q: What will be the output of the above code?**
+
+---
+
+**2️⃣ Static Method Resolution**
+```java
+class A {
+    static void print() {
+        System.out.println("A");
+    }
+}
+class B extends A {
+    static void print() {
+        System.out.println("B");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.print();
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**3️⃣ Overloading with null**
+```java
+public class OverloadTest {
+    void test(Object o) {
+        System.out.println("Object");
+    }
+
+    void test(String s) {
+        System.out.println("String");
+    }
+
+    public static void main(String[] args) {
+        new OverloadTest().test(null);
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**4️⃣ Autoboxing with ==**
+```java
+public class BoxTest {
+    public static void main(String[] args) {
+        Integer a = 1000, b = 1000;
+        System.out.println(a == b);
+    }
+}
+```
+**Q: What is the output?**
+
+---
+
+**5️⃣ Method Overload vs Varargs**
+```java
+class Demo {
+    void show(int... x) {
+        System.out.println("Varargs");
+    }
+
+    void show(Integer x) {
+        System.out.println("Integer");
+    }
+
+    public static void main(String[] args) {
+        new Demo().show(10);
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**6️⃣ Static Initializer in Abstract Class**
+```java
+abstract class Abs {
+    static {
+        System.out.println("Abstract class loaded");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Main running");
+    }
+}
+```
+**Q: What will be the output?**
+
+---
+
+**7️⃣ Enum Constructor Execution**
+```java
+enum Days {
+    MON, TUE, WED;
+
+    Days() {
+        System.out.println("Constructor called");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Days d = Days.TUE;
+    }
+}
+```
+**Q: How many times will "Constructor called" be printed?**
+
+---
+
+**8️⃣ Thread Start Twice**
+```java
+public class T extends Thread {
+    public void run() {
+        System.out.println("Running");
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+        t.start();
+        t.start();
+    }
+}
+```
+**Q: What happens when you run this code?**
+
+---
+
+**9️⃣ Object Casting Trap**
+```java
+class A { }
+class B extends A { }
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = (B) a;
+    }
+}
+```
+**Q: Will this compile? If yes, what is the runtime behavior?**
+
+---
+
+**🔟 Integer Caching**
+```java
+public class IntegerTest {
+    public static void main(String[] args) {
+        Integer a = 127;
+        Integer b = 127;
+        System.out.println(a == b);
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+Would you like me to:
+- Continue formatting all 30 like this?
+- Export this as a **PDF or printable sheet**?
+- Create a **challenge quiz with answer key**?
+
+Let me know how you want to use these for your Zoho prep!

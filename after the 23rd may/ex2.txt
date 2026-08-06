@@ -1,0 +1,304 @@
+Great! Here's a **set of 15 advanced-level Java recursion problems**, each carefully designed to **trigger at least 15 recursive calls** in some form. These will help you deeply understand recursion trees, call stacks, and how values propagate through recursive calls.
+
+---
+
+## 🔁 15 Hard-Level Recursion Problems in Java (Each Minimum 15 Calls)
+
+---
+
+### ✅ **Q1: Fibonacci (Classic)**
+
+```java
+public class Q1 {
+    static int fib(int n) {
+        if (n <= 1) return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fib(8));
+    }
+}
+```
+
+📌 Minimum 15 recursive calls due to exponential tree.
+
+---
+
+### ✅ **Q2: Power Function with Extra Call**
+
+```java
+public class Q2 {
+    static int power(int base, int exp) {
+        if (exp == 0) return 1;
+        return base * power(base, exp - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(power(2, 15));
+    }
+}
+```
+
+📌 Linear recursion: 15 calls.
+
+---
+
+### ✅ **Q3: Sum of Natural Numbers (1 to n)**
+
+```java
+public class Q3 {
+    static int sum(int n) {
+        if (n == 0) return 0;
+        return n + sum(n - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum(15));
+    }
+}
+```
+
+📌 Straightforward recursion with 15 calls.
+
+---
+
+### ✅ **Q4: Printing Characters Recursively**
+
+```java
+public class Q4 {
+    static void printChar(char ch, int times) {
+        if (times == 0) return;
+        System.out.print(ch);
+        printChar(ch, times - 1);
+    }
+
+    public static void main(String[] args) {
+        printChar('*', 15);
+    }
+}
+```
+
+---
+
+### ✅ **Q5: Recursive Array Sum**
+
+```java
+public class Q5 {
+    static int sumArray(int[] arr, int i) {
+        if (i == arr.length) return 0;
+        return arr[i] + sumArray(arr, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[15];
+        for (int i = 0; i < 15; i++) a[i] = i + 1;
+        System.out.println(sumArray(a, 0));
+    }
+}
+```
+
+---
+
+### ✅ **Q6: Reverse String Recursively**
+
+```java
+public class Q6 {
+    static void reverse(String s, int i) {
+        if (i < 0) return;
+        System.out.print(s.charAt(i));
+        reverse(s, i - 1);
+    }
+
+    public static void main(String[] args) {
+        reverse("123456789ABCDEFG", 15);
+    }
+}
+```
+
+---
+
+### ✅ **Q7: All Subsets of Array**
+
+```java
+public class Q7 {
+    static void subsets(int[] arr, int i, String path) {
+        if (i == arr.length) {
+            System.out.println(path);
+            return;
+        }
+        subsets(arr, i + 1, path);           // exclude
+        subsets(arr, i + 1, path + arr[i]);  // include
+    }
+
+    public static void main(String[] args) {
+        subsets(new int[] {1, 2, 3, 4}, 0, "");
+    }
+}
+```
+
+📌 2⁴ = 16 total calls minimum
+
+---
+
+### ✅ **Q8: Grid Paths (i × j)**
+
+```java
+public class Q8 {
+    static int countPaths(int i, int j) {
+        if (i == 1 || j == 1) return 1;
+        return countPaths(i - 1, j) + countPaths(i, j - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countPaths(5, 5));
+    }
+}
+```
+
+📌 Over 15 calls for sure.
+
+---
+
+### ✅ **Q9: Nested Recursion (Ackermann Style)**
+
+```java
+public class Q9 {
+    static int fun(int a, int b) {
+        if (a == 0) return b + 1;
+        if (b == 0) return fun(a - 1, 1);
+        return fun(a - 1, fun(a, b - 1));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fun(2, 2));
+    }
+}
+```
+
+📌 Explosion of calls
+
+---
+
+### ✅ **Q10: Permutations**
+
+```java
+public class Q10 {
+    static void permute(String str, String res) {
+        if (str.isEmpty()) {
+            System.out.println(res);
+            return;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            permute(str.substring(0, i) + str.substring(i + 1), res + str.charAt(i));
+        }
+    }
+
+    public static void main(String[] args) {
+        permute("abcd", "");
+    }
+}
+```
+
+📌 4! = 24 permutations
+
+---
+
+### ✅ **Q11: Counting Digits Recursively**
+
+```java
+public class Q11 {
+    static int countDigits(int n) {
+        if (n == 0) return 0;
+        return 1 + countDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countDigits(123456789012345L));
+    }
+}
+```
+
+---
+
+### ✅ **Q12: Sum of Digits**
+
+```java
+public class Q12 {
+    static int digitSum(int n) {
+        if (n == 0) return 0;
+        return n % 10 + digitSum(n / 10);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(digitSum(999999999));
+    }
+}
+```
+
+---
+
+### ✅ **Q13: Multiply via Recursion**
+
+```java
+public class Q13 {
+    static int multiply(int a, int b) {
+        if (b == 0) return 0;
+        return a + multiply(a, b - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(multiply(3, 15));
+    }
+}
+```
+
+---
+
+### ✅ **Q14: Binary Print Recursively**
+
+```java
+public class Q14 {
+    static void printBinary(int n) {
+        if (n == 0) return;
+        printBinary(n / 2);
+        System.out.print(n % 2);
+    }
+
+    public static void main(String[] args) {
+        printBinary(65535);
+    }
+}
+```
+
+---
+
+### ✅ **Q15: Merge Sort Recursion Count**
+
+```java
+public class Q15 {
+    static void mergeSort(int[] arr, int left, int right) {
+        if (left >= right) return;
+        int mid = (left + right) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+    }
+
+    public static void main(String[] args) {
+        int[] data = new int[16];
+        for (int i = 0; i < 16; i++) data[i] = i;
+        mergeSort(data, 0, data.length - 1);
+        System.out.println("Done");
+    }
+}
+```
+
+---
+
+Would you like:
+
+* ✅ These with **expected outputs**?
+* 📘 A **PDF worksheet** format for printing/studying?
+* 📊 Converted into a **quiz** with MCQs or code blanks?
+
+Let me know how you’d like to continue!

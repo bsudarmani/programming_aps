@@ -1,0 +1,577 @@
+Awesome! Here's a list of **30 very hard-level tricky Java output-based questions** that go deep into concepts like memory management, type casting, static resolution, recursion, anonymous inner classes, multithreading edge cases, etc.
+
+---
+
+### ✅ 1. Infinite Recursion with try-finally
+```java
+class Test {
+    public static void main(String[] args) {
+        System.out.println(test(1));
+    }
+
+    static int test(int i) {
+        try {
+            return test(i++);
+        } finally {
+            System.out.println("Finally " + i);
+        }
+    }
+}
+```
+
+---
+
+### ✅ 2. Static Inheritance Conflict
+```java
+class A {
+    static String name = "A";
+
+    static void print() {
+        System.out.println(name);
+    }
+}
+
+class B extends A {
+    static String name = "B";
+
+    static void print() {
+        System.out.println(name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.print();
+    }
+}
+```
+
+---
+
+### ✅ 3. Private Constructor Access
+```java
+class A {
+    private A() {
+        System.out.println("Private Constructor");
+    }
+
+    public static void main(String[] args) {
+        A obj = new A();
+    }
+}
+```
+
+---
+
+### ✅ 4. Abstract Class with Static Block
+```java
+abstract class Test {
+    static {
+        System.out.println("Static block of abstract class");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+}
+```
+
+---
+
+### ✅ 5. Integer + Long Mixing
+```java
+public class Test {
+    public static void main(String[] args) {
+        Long l = 10L;
+        Integer i = 10;
+        System.out.println(l == i);
+    }
+}
+```
+
+---
+
+### ✅ 6. Method Overloading with null
+```java
+class A {
+    void print(Object o) {
+        System.out.println("Object");
+    }
+
+    void print(String s) {
+        System.out.println("String");
+    }
+
+    public static void main(String[] args) {
+        A obj = new A();
+        obj.print(null);
+    }
+}
+```
+
+---
+
+### ✅ 7. Multi-Catch vs Catch Order
+```java
+public class Test {
+    public static void main(String[] args) {
+        try {
+            throw new NullPointerException();
+        } catch (Exception e) {
+            System.out.println("Exception");
+        } /*catch (NullPointerException e) {
+            System.out.println("NPE");
+        }*/
+    }
+}
+```
+
+---
+
+### ✅ 8. Multiple Class Loaders
+```java
+class A {
+    static {
+        System.out.println("Class A loaded");
+    }
+}
+
+class B {
+    static {
+        System.out.println("Class B loaded");
+    }
+
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class.forName("A");
+    }
+}
+```
+
+---
+
+### ✅ 9. Short-Circuit Logic
+```java
+public class Test {
+    public static void main(String[] args) {
+        boolean result = method1() || method2();
+        System.out.println("Result: " + result);
+    }
+
+    static boolean method1() {
+        System.out.println("Method1");
+        return true;
+    }
+
+    static boolean method2() {
+        System.out.println("Method2");
+        return false;
+    }
+}
+```
+
+---
+
+### ✅ 10. Static vs Dynamic Dispatch
+```java
+class Parent {
+    static void staticMethod() {
+        System.out.println("Static Parent");
+    }
+
+    void instanceMethod() {
+        System.out.println("Instance Parent");
+    }
+}
+
+class Child extends Parent {
+    static void staticMethod() {
+        System.out.println("Static Child");
+    }
+
+    void instanceMethod() {
+        System.out.println("Instance Child");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.staticMethod();
+        p.instanceMethod();
+    }
+}
+```
+
+---
+
+### ✅ 11. Enum Constructor Order
+```java
+enum Color {
+    RED, GREEN, BLUE;
+
+    Color() {
+        System.out.println("Constructor called for " + this);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Color c = Color.BLUE;
+    }
+}
+```
+
+---
+
+### ✅ 12. Static Final Variable Change Attempt
+```java
+class Test {
+    static final int x;
+
+    static {
+        x = 100;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+### ✅ 13. Thread Start Twice
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+        t.start(); // What happens here?
+    }
+}
+```
+
+---
+
+### ✅ 14. Autoboxing Pitfall
+```java
+public class Main {
+    public static void main(String[] args) {
+        Integer a = 1000, b = 1000;
+        System.out.println(a == b);
+    }
+}
+```
+
+---
+
+### ✅ 15. Labelled Loops
+```java
+public class Main {
+    public static void main(String[] args) {
+        outer:
+        for (int i = 0; i < 2; i++) {
+            inner:
+            for (int j = 0; j < 2; j++) {
+                if (i == j)
+                    break outer;
+                System.out.println("i=" + i + ", j=" + j);
+            }
+        }
+    }
+}
+```
+
+---
+
+### ✅ 16. Final Reference, Mutable Object
+```java
+public class Test {
+    public static void main(String[] args) {
+        final int[] arr = {1, 2, 3};
+        arr[0] = 10;
+        System.out.println(arr[0]);
+    }
+}
+```
+
+---
+
+### ✅ 17. Overridden Finalizer
+```java
+class A {
+    protected void finalize() {
+        System.out.println("Finalize called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new A();
+        System.gc();
+    }
+}
+```
+
+---
+
+### ✅ 18. Recursion with Try-Catch
+```java
+public class Test {
+    public static void main(String[] args) {
+        try {
+            recurse(1);
+        } catch (StackOverflowError e) {
+            System.out.println("Caught SOE");
+        }
+    }
+
+    static void recurse(int x) {
+        recurse(++x);
+    }
+}
+```
+
+---
+
+### ✅ 19. Static Import Confusion
+```java
+import static java.lang.System.out;
+import static java.lang.Math.*;
+
+public class Main {
+    public static void main(String[] args) {
+        out.println(pow(2, 3));
+    }
+}
+```
+
+---
+
+### ✅ 20. Anonymous Inner Class and Shadowing
+```java
+interface A {
+    void show();
+}
+
+class Test {
+    public static void main(String[] args) {
+        A obj = new A() {
+            public void show() {
+                System.out.println("Inside anonymous class");
+            }
+        };
+        obj.show();
+    }
+}
+```
+
+---
+
+### ✅ 21. Inheritance Confusion
+```java
+class A {
+    int x = 10;
+}
+
+class B extends A {
+    int x = 20;
+
+    void show() {
+        System.out.println(super.x);
+        System.out.println(this.x);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new B().show();
+    }
+}
+```
+
+---
+
+### ✅ 22. Varargs Precedence
+```java
+class A {
+    void print(int... x) {
+        System.out.println("int varargs");
+    }
+
+    void print(Integer x) {
+        System.out.println("Integer");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+        a.print(10);
+    }
+}
+```
+
+---
+
+### ✅ 23. Wrapper Class Comparison
+```java
+public class Test {
+    public static void main(String[] args) {
+        Integer a = 100;
+        Integer b = 100;
+        Integer c = 200;
+        Integer d = 200;
+
+        System.out.println(a == b); // true
+        System.out.println(c == d); // false
+    }
+}
+```
+
+---
+
+### ✅ 24. Object Casting at Runtime
+```java
+class A { }
+
+class B extends A { }
+
+class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = (B) a; // ClassCastException
+    }
+}
+```
+
+---
+
+### ✅ 25. Static vs Final Variable
+```java
+class A {
+    static final int x = 10;
+}
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println(A.x);
+    }
+}
+```
+
+---
+
+### ✅ 26. Deadlock Simulation (Concept)
+```java
+// Just logic - not runnable without threads
+class A {
+    synchronized void m1(B b) {
+        System.out.println("Inside A.m1");
+        b.last();
+    }
+
+    synchronized void last() {
+        System.out.println("Inside A.last");
+    }
+}
+
+class B {
+    synchronized void m2(A a) {
+        System.out.println("Inside B.m2");
+        a.last();
+    }
+
+    synchronized void last() {
+        System.out.println("Inside B.last");
+    }
+}
+```
+
+---
+
+### ✅ 27. Method Hiding in Static
+```java
+class A {
+    static void print() {
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+    static void print() {
+        System.out.println("B");
+    }
+
+    public static void main(String[] args) {
+        A a = new B();
+        a.print(); // A
+    }
+}
+```
+
+---
+
+### ✅ 28. Inheritance Constructor Flow
+```java
+class A {
+    A() {
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+    B() {
+        System.out.println("B");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new B();
+    }
+}
+```
+
+---
+
+### ✅ 29. Exception Inside Finally
+```java
+public class Test {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Try");
+        } finally {
+            int x = 5 / 0;
+            System.out.println("Finally");
+        }
+    }
+}
+```
+
+---
+
+### ✅ 30. Thread Yielding
+```java
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            Thread.yield();
+            System.out.println("Child thread");
+        });
+        t.start();
+        System.out.println("Main thread");
+    }
+}
+```
+
+---
+
+Would you like these with **answers**, **PDF format**, or a **quiz version**? I can also prepare a **challenge sheet** where you guess the outputs and I give feedback!

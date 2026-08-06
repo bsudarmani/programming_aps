@@ -1,0 +1,460 @@
+Sure! Below are 30 questions related to finding the output of recursion problems. These problems cover different aspects of recursion in programming and will help you practice solving them.
+
+### 1. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n <= 1)
+        return 1;
+    return n * func(n - 1);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 2. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n == 0)
+        return;
+    func(n - 1);
+    cout << n << " ";
+}
+int main() {
+    func(3);
+    return 0;
+}
+```
+
+### 3. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n - 1) + n;
+}
+int main() {
+    cout << func(4);
+    return 0;
+}
+```
+
+### 4. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 1;
+    return n * func(n - 1);
+}
+int main() {
+    cout << func(3) << " " << func(4);
+    return 0;
+}
+```
+
+### 5. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n <= 0)
+        return 1;
+    return 2 * func(n - 1);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 6. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        func(n - 1);
+        cout << n << " ";
+    }
+}
+int main() {
+    func(3);
+    return 0;
+}
+```
+
+### 7. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return n + func(n - 1);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 8. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n <= 0)
+        return 0;
+    return n + func(n - 2);
+}
+int main() {
+    cout << func(6);
+    return 0;
+}
+```
+
+### 9. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return func(n / 2) + 1;
+}
+int main() {
+    cout << func(8);
+    return 0;
+}
+```
+
+### 10. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 1;
+    return n * func(n - 2);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 11. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return func(n - 1) * n;
+}
+int main() {
+    cout << func(4);
+    return 0;
+}
+```
+
+### 12. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return n + func(n - 1);
+}
+int main() {
+    cout << func(2);
+    return 0;
+}
+```
+
+### 13. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n > 0) {
+        func(n - 1);
+        cout << n << " ";
+    }
+}
+int main() {
+    func(3);
+    return 0;
+}
+```
+
+### 14. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n - 1) + 1;
+}
+int main() {
+    cout << func(3);
+    return 0;
+}
+```
+
+### 15. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        func(n - 1);
+    }
+}
+int main() {
+    func(4);
+    return 0;
+}
+```
+
+### 16. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return func(n / 2) + func(n / 3);
+}
+int main() {
+    cout << func(6);
+    return 0;
+}
+```
+
+### 17. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n - 1) + n;
+}
+int main() {
+    cout << func(3) + func(4);
+    return 0;
+}
+```
+
+### 18. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n - 1) * n;
+}
+int main() {
+    cout << func(4);
+    return 0;
+}
+```
+
+### 19. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n == 0)
+        return;
+    func(n - 1);
+    cout << n * n << " ";
+}
+int main() {
+    func(3);
+    return 0;
+}
+```
+
+### 20. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n - 1) + n * n;
+}
+int main() {
+    cout << func(3);
+    return 0;
+}
+```
+
+### 21. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n <= 1)
+        return 1;
+    return func(n - 2) + func(n - 1);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 22. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return n + func(n - 1);
+}
+int main() {
+    cout << func(6);
+    return 0;
+}
+```
+
+### 23. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 1;
+    return func(n - 1) * n;
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 24. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+void func(int n) {
+    if (n == 0)
+        return;
+    func(n - 1);
+    cout << "Recursion " << n << " ";
+}
+int main() {
+    func(3);
+    return 0;
+}
+```
+
+### 25. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 1;
+    return func(n - 1) + 2;
+}
+int main() {
+    cout << func(4);
+    return 0;
+}
+```
+
+### 26. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 1;
+    return func(n - 1) * n;
+}
+int main() {
+    cout << func(0) + func(1);
+    return 0;
+}
+```
+
+### 27. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return n + func(n - 2);
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+### 28. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 0)
+        return 0;
+    return func(n / 2) + 1;
+}
+int main() {
+    cout << func(16);
+    return 0;
+}
+```
+
+### 29. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return func(n - 1) + n;
+}
+int main() {
+    cout << func(4) * func(3);
+    return 0;
+}
+```
+
+### 30. **Find the Output:**
+```cpp
+#include <iostream>
+using namespace std;
+int func(int n) {
+    if (n == 1)
+        return 1;
+    return func(n - 1) + n;
+}
+int main() {
+    cout << func(5);
+    return 0;
+}
+```
+
+These questions are designed to help you practice and test your understanding of recursion.

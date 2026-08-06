@@ -1,0 +1,736 @@
+codeio-c playlist
+
+1.
+int main() { 
+for(int n=7; n != 0; n--) 
+printf("n = %d", n--); 
+getchar();
+ return 0; 
+} 
+
+2.
+#include<stdio.h>(please check)
+int main() { 
+    int i = 1; 
+    do{
+        printf("%d \n", i++); 
+    if (i< 15) 
+     continue;
+   }while (0);
+ return 0; } 
+
+
+3.char* getString(){
+ char* str = "Nice test for strings";
+ return str; 
+}
+ int main()
+{
+ printf("%s", getString()); 
+return 0;
+}
+
+
+4. int main() {(please check)
+ static int i=5; 
+if(--i){
+ main();
+ printf("%d ",i); 
+}
+}
+
+
+5. int main() (please check)
+{
+int x; 
+printf("%d",scanf("%d",&x)); 
+/* Suppose that input value given for above scanf is 20 */ 
+return 1; 
+}
+
+
+6. int main() {(please check)
+ int first = 50; 
+int second = 60, third; 
+third = first /*Code io*/ + second;
+ printf("%d /*Like*/ \n", third);
+ return 0; 
+}
+
+7.
+ int main()
+ {
+ int i ; i = 1, 2, 3;
+ printf("i = %d \n", i);
+ return 0; 
+} 
+
+7a.
+int main()
+ {
+ int i ; i=( 1, 2, 3);//last digit value stored
+ printf("i = %d \n", i);
+ return 0; 
+} 
+
+8. int main() {
+ int c = 5, no = 1000;
+ do { 
+ no /= c; 
+ }
+while(c--); 
+printf ("%d\n", no);
+return 0;
+ }
+
+9.#define prod(a,b) a*b
+ int main() 
+{
+ int x=3,y=4;
+ printf("%d",prod(x+2,y-1));
+ return 0;
+ }
+
+10.
+ int main()(please check)
+{ 
+short int i=65000; 
+while ( i++ != 0); 
+printf("%d",i);
+ return 0;
+ } 
+
+
+11. int main() { (please check)
+char str[ ] = "codeio";
+ char *s1 = str;
+ for(int i = 0; i != 4; i++) 
+{
+ printf("%c ", *str);
+ s1++; 
+}
+ return 0; 
+} 
+
+12.
+int main()(please check)
+{
+ signed char i=0;
+for(;i>=0;i++);
+printf("%d\n",i);
+return 0;
+}
+
+13.
+int main()
+{
+ char arr[]={'a','b'};
+ char *p=arr;
+ if(&p==&arr)
+   printf("Same");
+ else
+  printf("Not same");
+ return 0;
+}
+
+14.
+int main()(please check)
+{
+ char arr[]={1,2,3};
+char *p=arr;
+printf("%d",sizeof(p));
+printf("%d",sizeof(arr));
+return 0;
+}
+
+15.
+int main()
+{
+int a=1;
+int b=1;
+int c=a||--b;
+int d=a--&&--b;
+printf("a=%d,b=%d",a,b);
+printf("c=%d,d=%d",c,d);
+return 0;
+} 
+
+15.a
+int main()(please check)
+{
+int a=1;
+int b=0;
+int c=a||--b;
+int d=a--&&--b;
+printf("a=%d,b=%d",a,b);
+printf("c=%d,d=%d",c,d);
+return 0;
+} 
+
+16.
+int main()
+{
+int x,y=5,z=5;
+x=y==z;
+printf("%d",x);
+return 0;
+}
+
+
+17.
+int main()
+{
+char arr[]="codeio";
+printf("%d",sizeof(arr));
+return 0;
+}
+
+17 
+a.
+int main()(please check)
+{
+char arr[]="\tcodeio";
+printf("%d",sizeof(arr));
+return 0;
+}
+
+18.
+//replace ? with something to get "geeks"
+
+int main()(please check (arr+8))
+{
+char arr[]="geeksforgeeks";
+printf("%s",?)
+return 0;
+}
+
+
+18.a
+int main()(please check output is "Hello%World")
+{
+printf("\"Hello%%World\"");
+return 0;
+}
+
+
+18.b
+int main()
+{
+char arr[]="25";
+int num=100;
+printf("%s%% of %d=?",arr,num);
+return 0;
+}
+
+
+19.
+int func(int i)
+{
+if(i%2)
+  return (i++);
+else
+  return func(func(i-1));
+}
+
+
+20.
+int main()(please check)
+{
+int a=1;
+int b=0;
+b=++a + ++a;
+printf("%d%d",a,b);
+return 0;
+}
+
+
+20.a
+int main()(please check)
+{
+int a=1;
+int b=0;
+b=a-- + ++a;
+printf("%d%d",a,b);
+return 0;
+}
+
+21.
+int main()
+{
+int a[]={1,2,3,4,5,6};
+int b=&a;
+int c=&a+1;
+printf("%d",c-b);
+return 0;
+}
+
+22.
+int main()
+{
+int a[]={1,2,3,4,5,6};
+int *prt=(int*)(&a+1);
+printf("%d",*(ptr-1));
+return 0;
+}
+
+22.a
+int main()
+{
+int arr[]={1,2,3,4,5,6};
+int *ptr=(int*)(&a+1);
+printf("%d",*ptr-2);
+return 0;
+}
+
+23.
+#define R 10
+#define C 20
+int main()
+{
+int (*p)[R][C];
+printf("%d",sizeof(*p));
+return 0;
+}
+
+24.
+int main()(please check)
+{
+int x=10;
+static int y=x;
+if(x==y) printf("Yes");
+else printf("No");
+return 0;
+}
+
+25.
+int main()
+{
+int i;
+i=(printf("code"),printf("io"));
+printf("%d",i);
+return 0;
+}
+
+26.
+int main()(please check)
+{
+int i,j,p=0,q=2;
+for(i=0,j=0;i<p,j<q;i++,j++)
+ printf("Code io\n");
+return 0;
+}
+
+26.a
+int main()(please check)
+{
+int i,j,p=2,q=0;
+for(i=0,j=-1;i<p,j<q;i++,j++)
+ printf("Code io\n");
+return 0;
+}
+
+27.
+int main()(please check)
+{
+https://www.google.com;
+printf("Hello");
+}
+
+27.a
+
+int main()
+{
+https:
+ printf("Hello");
+ goto https;
+}
+
+28.
+int main()
+{
+int arr[2][2]={{1,2},{3,4}};
+ for(int i=0;i<2;i++)
+  for(int j=0;j<2;j++)
+    printf("%d",j[i[arr]]);
+return 0; 
+}
+
+28.a
+int main()
+{
+int arr[2][2]={{1,2},{3,4}};
+ for(int i=0;i<2;i++)
+  for(int j=0;j<2;j++)
+    printf("%d",i[j[arr]]);
+return 0; 
+}
+
+29.
+int main()(please check)
+{
+int arr[3]={00001,00100,10000};
+for(int i=0;i<3;i++)
+  printf("%d",arr[i]);
+return 0;
+}
+
+29.a
+int main()(please check)
+{
+int arr[3]={010,0010,00010};
+for(int i=0;i<3;i++)
+  printf("%d",arr[i]);
+return 0;
+}
+
+30.
+int main()
+{
+int a,b=10;
+a=-b--;
+printf("%d%d",a,b);
+return 0;
+}
+
+30.a
+int main()
+{
+int a,b=5;
+a=-b++;
+printf("%d%d",a,b);
+return 0;
+}
+
+31.
+
+int main()
+{
+int a=10;
+a=(a++)+(a++)-(a++)+(++a);
+printf("%d",a);
+return 0;
+}
+
+32.
+int main()(please check)
+{
+int a=random()%1000;
+printf("%d",a);
+return 0;
+}
+
+32.a
+int main()(please check)
+{
+int a=random()%1;
+printf("%d",a);
+return 0;
+}
+
+
+33.
+union test
+{
+int x,y;
+char arr[8];
+}u;
+int main()
+{
+printf("%d",sizeof(u));
+return 0;
+}
+
+33.a
+union test
+{
+double x,y;
+int arr[8];
+}u;
+int main()
+{
+printf("%d",sizeof(u));
+return 0;
+}
+
+34.
+void main()
+{
+int m,i=0,j=1,k=2;
+m=i++||j++||k++;
+printf("%d%d%d%d",m,i,j,k);
+}
+
+34.a
+void main()
+{
+int m=5,i=0,j=5,k=1;
+m=i++||j++&&k++;
+printf("%d%d%d%d",m,i,j,k);
+}
+
+35.
+
+int main()
+{
+char buf[4]={1,2,3,4};
+char p=(buf+1)[2];
+printf("%d",p);
+return 0;
+}
+
+35.a
+int main()
+{
+char buf[4]={1,2,3,4};
+char p=(buf+0)[0];
+printf("%d",p);
+return 0;
+}
+
+36.
+#include<stdio.h>(please check return "Success")
+int main()
+{
+printf("%m");
+return 0;
+}
+
+36.a
+#include<stdio.h>
+int main()
+{
+printf("%m%%d");
+return 0;
+}
+
+37.
+int main()
+{
+printf(2+"codeio");
+return 0;
+}
+
+37.a
+int main()
+{
+printf(0+"Like");
+return 0;
+}
+
+
+38.
+void main()(please check)(sizeof operator used to not perform the operation)
+{
+int a=5;
+float b;
+printf("%d",sizeof(++a+b));
+printf("%d",a);
+}
+
+39.
+int main()
+{
+register int i;
+scanf("%d",&i);
+printf("%d",i);
+return 0;
+}
+
+39.a
+
+int main()
+{
+//input:100101
+int i;
+scanf("%d",&i);
+printf("%d",i);
+return 0;
+}
+
+40.
+void main()
+{
+int a=5,b=10;
+ {
+  int a=2;
+  a++;
+  b++;
+ }
+printf("%d%d",a,b);
+}
+
+41.
+void main()
+{
+int x=10,*y,**z;
+y=&x;
+z=&y;
+printf("%d",*y);
+printf("%d",**z);
+printf("%d",*(*z));
+}
+
+41.a
+void main()
+{
+int x=1,*y,**z;
+y=&x;
+z=&y;
+printf("%d",*y);
+printf("%d",*z);
+}
+
+42.
+void main()(please check)
+{
+int a=1,b=2,c=3;
+char d=0;
+if(a,b,c,d)
+  printf("code io");
+
+}
+
+42.a
+void main()
+{
+int a=1,b=2,c=3;
+char d=0;
+if(a,!b,c,!d)
+  printf("code io");
+}
+
+43.
+int main()
+{
+char* str="codeio";
+printf("%c",*&*str);
+return 0;
+}
+
+43.a
+int main()(please check)
+{
+char* str="codeio";
+printf("%c",&**str);
+return 0;
+}
+
+44.
+
+int main()
+{
+if(printf("Coding"))
+ switch(printf("is"))
+  while(printf("fun"))
+   return 0;
+}
+
+44.a
+int main()
+{
+if(printf("Coding"))
+ switch(printf("\n"))
+  case 1:
+    printf("is fun"))
+    return 0;
+}
+
+45.
+void main()(please check 4==4 =>1==4 return no)
+{
+int x=4,y=4,z=4;
+if(x==y==z)
+  printf("Yes");
+else
+  printf("No");
+
+}
+
+
+46.
+void main()
+{
+int i,j=3;
+float k=7;
+i=j%7;
+printf("%d",i);
+}
+
+46.a
+void main()
+{
+int i,j=3;
+float k=7;
+i=fmod(k,j);
+printf("%d",i);
+}
+
+47.
+void main()(please check output is-zero divisor error)
+{
+int a,b=1;
+it x[5]={1,2,3,4,5};
+a=5*4+x[--b]-(9/b);
+printf("%d",a);
+
+}
+
+
+47.a
+
+void main()
+{
+int a,b=1;
+int x[5]={1,2,3,4,5};
+a=5*4+x[b++]-(9/b);
+printf("%d",a);
+} 
+
+48.
+void main()
+{
+int a=9;
+float x;
+x=a/2;
+printf("%f",x);
+}
+
+48.a
+void main()(please check)
+{
+int a=9;
+float x;
+x=(float)a/2;
+printf("%f",x);
+}
+
+49.
+void main()(please check)
+{
+int x=0,k;
+while(+(+x--)!=0)
+ x++;
+printf("%d",x);
+}
+
+49.a
+void main()(please check)
+{
+int x=0,k;
+while(+(+x--)==0)
+ x--;
+printf("%d",x);
+}
+
+50.
+int main()
+{
+reverse(1);
+}
+int reverse(int i)
+{
+if(i>5)
+ exit(0);
+printf("%d\n",i);
+return reverse(i++);
+}

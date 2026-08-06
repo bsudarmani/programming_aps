@@ -1,0 +1,326 @@
+Here are 30 example questions based on various topics like pointers, strings, loops, recursion, etc., that test understanding and can be used for interviews at major MNCs like Zoho:
+
+1. Pointers
+What will be the output of the following code snippet?
+c
+Copy
+Edit
+int x = 5;
+int *p = &x;
+*p = 10;
+printf("%d", x);
+(Output: 10)
+2. String Manipulation
+What is the output of this code?
+c
+Copy
+Edit
+char str[] = "Hello";
+printf("%c", *(str + 1));
+(Output: 'e')
+3. Loops
+What is the output of the following loop?
+c
+Copy
+Edit
+int i = 0;
+for (i = 0; i < 3; i++) {
+    if (i == 1) {
+        continue;
+    }
+    printf("%d ", i);
+}
+(Output: 0 2)
+4. Complex Loop
+What is the output of this nested loop?
+c
+Copy
+Edit
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 2; j++) {
+        printf("%d%d ", i, j);
+    }
+}
+(Output: 00 01 10 11 20 21)
+5. Decrement in Loop
+What will be printed?
+c
+Copy
+Edit
+for (int i = 5; i > 0; i--) {
+    printf("%d ", i);
+}
+(Output: 5 4 3 2 1)
+6. String Pointer
+What is the output of this code?
+c
+Copy
+Edit
+char *str = "ABCD";
+printf("%c", *(str + 2));
+(Output: 'C')
+7. Function Pointer
+What is the output of the following code?
+c
+Copy
+Edit
+int add(int a, int b) { return a + b; }
+int (*fp)(int, int) = add;
+printf("%d", fp(2, 3));
+(Output: 5)
+8. Structure Pointer
+What will be printed?
+c
+Copy
+Edit
+struct Person {
+    int age;
+    char name[20];
+};
+struct Person p = {25, "John"};
+struct Person *ptr = &p;
+printf("%d", ptr->age);
+(Output: 25)
+9. Recursion
+What is the output of this recursive function call?
+c
+Copy
+Edit
+int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+printf("%d", factorial(4));
+(Output: 24)
+10. Condition Statement
+What will be the output?
+c
+Copy
+Edit
+int x = 5;
+if (x > 10) {
+    printf("Greater");
+} else {
+    printf("Smaller");
+}
+(Output: Smaller)
+11. Pattern (Nested Loop)
+What is the output of this pattern?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= i; j++) {
+        printf("*");
+    }
+    printf("\n");
+}
+(Output:
+markdown
+Copy
+Edit
+*
+**
+***
+12. String Concatenation
+What is the output of the following?
+c
+Copy
+Edit
+char str1[] = "Hello";
+char str2[] = " World";
+strcat(str1, str2);
+printf("%s", str1);
+(Output: Hello World)
+13. Pointer to Array
+What will be printed?
+c
+Copy
+Edit
+int arr[] = {1, 2, 3, 4};
+int *ptr = arr;
+printf("%d", *(ptr + 2));
+(Output: 3)
+14. Loop with Continue and Break
+What is the output of the following?
+c
+Copy
+Edit
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) break;
+    printf("%d ", i);
+}
+(Output: 1 2)
+15. Nested Recursion
+What is the output of this function?
+c
+Copy
+Edit
+int fun(int n) {
+    if (n <= 0) return 0;
+    return n + fun(n - 1);
+}
+printf("%d", fun(3));
+(Output: 6)
+16. Array Pointer Arithmetic
+What will this print?
+c
+Copy
+Edit
+int arr[] = {10, 20, 30};
+int *p = arr;
+printf("%d", *(p + 1));
+(Output: 20)
+17. String Comparison
+What is the result of this comparison?
+c
+Copy
+Edit
+char str1[] = "ABC";
+char str2[] = "ABC";
+if (strcmp(str1, str2) == 0) printf("Equal");
+else printf("Not Equal");
+(Output: Equal)
+18. Loops with Odd Numbers
+What is the output of the following loop?
+c
+Copy
+Edit
+for (int i = 1; i <= 5; i++) {
+    if (i % 2 != 0) printf("%d ", i);
+}
+(Output: 1 3 5)
+19. Nested Loops with Condition
+What is the output of this nested loop?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 2; j++) {
+        if (i == j) continue;
+        printf("%d%d ", i, j);
+    }
+}
+(Output: 12 13 21 23 31 32)
+20. Function Pointer with Different Arguments
+What is the output?
+c
+Copy
+Edit
+int add(int a, int b) { return a + b; }
+float multiply(float a, float b) { return a * b; }
+void (*func_ptr)();
+func_ptr = (void (*)())add;
+printf("%d", func_ptr(2, 3));
+(Output: Undefined behavior)
+21. Array in Structure
+What is the output?
+c
+Copy
+Edit
+struct Data {
+    int arr[3];
+};
+struct Data obj = {{1, 2, 3}};
+printf("%d", obj.arr[1]);
+(Output: 2)
+22. Pointer to Function Returning Value
+What will be printed?
+c
+Copy
+Edit
+int square(int x) { return x * x; }
+int (*f_ptr)(int) = square;
+printf("%d", f_ptr(4));
+(Output: 16)
+23. Condition with Nested If
+What will the output be for x = 5?
+c
+Copy
+Edit
+if (x > 0) {
+    if (x > 3) printf("Greater");
+    else printf("Smaller");
+} else {
+    printf("Negative");
+}
+(Output: Greater)
+24. String Pointer Arithmetic
+What is the result?
+c
+Copy
+Edit
+char str[] = "Hello";
+printf("%c", *(str + 4));
+(Output: 'o')
+25. Switch Case
+What is the output of the following switch-case?
+c
+Copy
+Edit
+int x = 2;
+switch(x) {
+    case 1: printf("One"); break;
+    case 2: printf("Two"); break;
+    case 3: printf("Three"); break;
+}
+(Output: Two)
+26. String Manipulation
+What will be printed?
+c
+Copy
+Edit
+char str[] = "World";
+str[2] = 'p';
+printf("%s", str);
+(Output: Wpold)
+27. Print Reverse String
+What will this print?
+c
+Copy
+Edit
+char str[] = "Hello";
+for (int i = strlen(str) - 1; i >= 0; i--) {
+    printf("%c", str[i]);
+}
+(Output: olleH)
+28. Recursion with Decrement
+What is the output?
+c
+Copy
+Edit
+void print(int n) {
+    if (n <= 0) return;
+    printf("%d ", n);
+    print(n - 1);
+}
+print(3);
+(Output: 3 2 1)
+29. Pointer to Array of Strings
+What will this print?
+c
+Copy
+Edit
+char *arr[] = {"Hello", "World"};
+printf("%s", arr[1]);
+(Output: World)
+30. Pattern with Numbers
+What is the output of the following pattern?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= i; j++) {
+        printf("%d", j);
+    }
+    printf("\n");
+}
+(Output:
+go
+Copy
+Edit
+1
+12
+123
+```)
+These questions cover a variety of concepts and can help assess both your knowledge and logical thinking during an interview.

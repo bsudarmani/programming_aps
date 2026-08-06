@@ -1,0 +1,474 @@
+Here are 30 questions based on the concepts you've asked for, focusing on finding the output of different programs, ranging from basic to medium complexity.
+
+---
+
+### 1. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 5;
+    printf("%d %d", a++, ++a);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5 7
+```
+
+### 2. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10;
+    printf("%d %d", ++x, x++);
+    return 0;
+}
+```
+**Expected Output:**
+```
+11 11
+```
+
+### 3. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int *p = arr;
+    printf("%d ", *p++);
+    printf("%d ", *++p);
+    printf("%d ", *p--);
+    printf("%d ", *p);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 3 3 2
+```
+
+### 4. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    char str[] = "Hello";
+    printf("%c", *(str + 2));
+    return 0;
+}
+```
+**Expected Output:**
+```
+l
+```
+
+### 5. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5;
+    printf("%d", (x++) * (x++));
+    return 0;
+}
+```
+**Expected Output:**
+```
+30
+```
+
+### 6. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int i = 5;
+    if (i == 5) {
+        if (i < 10) {
+            printf("Hello ");
+        }
+    }
+    printf("World");
+    return 0;
+}
+```
+**Expected Output:**
+```
+Hello World
+```
+
+### 7. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20;
+    if (a == 10 && b == 20)
+        printf("Correct");
+    else
+        printf("Incorrect");
+    return 0;
+}
+```
+**Expected Output:**
+```
+Correct
+```
+
+### 8. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int i = 0;
+    for (i = 0; i < 5; i++) {
+        if (i == 3)
+            break;
+    }
+    printf("%d", i);
+    return 0;
+}
+```
+**Expected Output:**
+```
+3
+```
+
+### 9. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10;
+    if (x == 10) {
+        printf("True");
+    } else {
+        printf("False");
+    }
+    return 0;
+}
+```
+**Expected Output:**
+```
+True
+```
+
+### 10. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    char str[] = "Zoho";
+    printf("%s", str);
+    return 0;
+}
+```
+**Expected Output:**
+```
+Zoho
+```
+
+### 11. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5, y = 10;
+    printf("%d", x == 5 && y == 10);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1
+```
+
+### 12. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int i = 1;
+    switch (i) {
+        case 1: printf("One");
+        case 2: printf("Two");
+        default: printf("Default");
+    }
+    return 0;
+}
+```
+**Expected Output:**
+```
+OneTwoDefault
+```
+
+### 13. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int i = 0;
+    while (i < 5) {
+        if (i == 3) {
+            break;
+        }
+        i++;
+    }
+    printf("%d", i);
+    return 0;
+}
+```
+**Expected Output:**
+```
+3
+```
+
+### 14. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5;
+    x++;
+    printf("%d", x);
+    return 0;
+}
+```
+**Expected Output:**
+```
+6
+```
+
+### 15. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 8;
+    int result = x % 3;
+    printf("%d", result);
+    return 0;
+}
+```
+**Expected Output:**
+```
+2
+```
+
+### 16. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 5;
+    int b = 10;
+    printf("%d", a + b);
+    return 0;
+}
+```
+**Expected Output:**
+```
+15
+```
+
+### 17. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 5, b = 3;
+    printf("%d", a / b);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1
+```
+
+### 18. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    char str[] = "World";
+    str[1] = 'o';
+    printf("%s", str);
+    return 0;
+}
+```
+**Expected Output:**
+```
+World
+```
+
+### 19. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 5;
+    int b = 10;
+    printf("%d %d", a, b);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5 10
+```
+
+### 20. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    char c = 'A';
+    printf("%c", c + 1);
+    return 0;
+}
+```
+**Expected Output:**
+```
+B
+```
+
+### 21. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10;
+    x = (x == 10) ? 1 : 0;
+    printf("%d", x);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1
+```
+
+### 22. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10, y = 5;
+    printf("%d", x - y);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5
+```
+
+### 23. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 3;
+    printf("%d", a++);
+    return 0;
+}
+```
+**Expected Output:**
+```
+3
+```
+
+### 24. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10;
+    x = x - 5;
+    printf("%d", x);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5
+```
+
+### 25. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10, y = 5;
+    printf("%d", x * y);
+    return 0;
+}
+```
+**Expected Output:**
+```
+50
+```
+
+### 26. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5;
+    printf("%d", --x);
+    return 0;
+}
+```
+**Expected Output:**
+```
+4
+```
+
+### 27. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 0;
+    if (x) {
+        printf("True");
+    } else {
+        printf("False");
+    }
+    return 0;
+}
+```
+**Expected Output:**
+```
+False
+```
+
+### 28. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5;
+    printf("%d", x++);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5
+```
+
+### 29. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int i;
+    for (i = 0; i < 3; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+```
+**Expected Output:**
+```
+0 1 2
+```
+
+### 30. **Output of the following program?**
+```c
+#include <stdio.h>
+int main() {
+    int a = 10;
+    if (a > 5) {
+        printf("Greater");
+    } else {
+        printf("Smaller");
+    }
+    return 0;
+}
+```
+**Expected Output:**
+```
+Greater
+```
+
+---
+
+These questions cover basic concepts in C programming, such as operators, loops, conditionals, and pointer arithmetic, which will help you prepare for interviews that require problem-solving skills.

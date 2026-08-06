@@ -1,0 +1,537 @@
+Sure! Below are 30 questions that focus on recursion in C, ranging from easy to advanced levels. These questions ask you to determine the output of recursive functions.
+
+### 1. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void print(int n) {
+    if (n == 0) return;
+    printf("%d ", n);
+    print(n - 1);
+}
+int main() {
+    print(5);
+    return 0;
+}
+```
+**Expected Output:**
+```
+5 4 3 2 1
+```
+
+### 2. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void print(int n) {
+    if (n == 0) return;
+    print(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    print(4);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2 3 4
+```
+
+### 3. **What is the output of this program?**
+```c
+#include <stdio.h>
+void print(int n) {
+    if (n == 0) return;
+    print(n / 2);
+    printf("%d ", n % 2);
+}
+int main() {
+    print(10);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 0 1 0
+```
+
+### 4. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+int main() {
+    printf("%d", factorial(5));
+    return 0;
+}
+```
+**Expected Output:**
+```
+120
+```
+
+### 5. **What will the output of this program be?**
+```c
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    printf("%d", fibonacci(6));
+    return 0;
+}
+```
+**Expected Output:**
+```
+8
+```
+
+### 6. **What is the output of this program?**
+```c
+#include <stdio.h>
+int sum(int n) {
+    if (n == 0) return 0;
+    return n + sum(n - 1);
+}
+int main() {
+    printf("%d", sum(3));
+    return 0;
+}
+```
+**Expected Output:**
+```
+6
+```
+
+### 7. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void print(int n) {
+    if (n == 0) return;
+    print(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    print(3);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2 3
+```
+
+### 8. **What is the output of the following program?**
+```c
+#include <stdio.h>
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+int main() {
+    printf("%d", power(2, 3));
+    return 0;
+}
+```
+**Expected Output:**
+```
+8
+```
+
+### 9. **What will be the output of the following program?**
+```c
+#include <stdio.h>
+int reverse(int n) {
+    if (n == 0) return 0;
+    return (n % 10) * 10 + reverse(n / 10);
+}
+int main() {
+    printf("%d", reverse(123));
+    return 0;
+}
+```
+**Expected Output:**
+```
+123
+```
+
+### 10. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void countDown(int n) {
+    if (n == 0) return;
+    printf("%d ", n);
+    countDown(n - 1);
+}
+int main() {
+    countDown(4);
+    return 0;
+}
+```
+**Expected Output:**
+```
+4 3 2 1
+```
+
+### 11. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int sumDigits(int n) {
+    if (n == 0) return 0;
+    return n % 10 + sumDigits(n / 10);
+}
+int main() {
+    printf("%d", sumDigits(123));
+    return 0;
+}
+```
+**Expected Output:**
+```
+6
+```
+
+### 12. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void printReverse(int n) {
+    if (n == 0) return;
+    printf("%d ", n);
+    printReverse(n - 1);
+}
+int main() {
+    printReverse(3);
+    return 0;
+}
+```
+**Expected Output:**
+```
+3 2 1
+```
+
+### 13. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void printPattern(int n) {
+    if (n == 0) return;
+    printPattern(n - 1);
+    for (int i = 0; i < n; i++) {
+        printf("* ");
+    }
+    printf("\n");
+}
+int main() {
+    printPattern(4);
+    return 0;
+}
+```
+**Expected Output:**
+```
+* 
+* * 
+* * * 
+* * * * 
+```
+
+### 14. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int factorial(int n) {
+    if (n == 1) return 1;
+    return n * factorial(n - 1);
+}
+int main() {
+    printf("%d", factorial(4));
+    return 0;
+}
+```
+**Expected Output:**
+```
+24
+```
+
+### 15. **What will the following program print?**
+```c
+#include <stdio.h>
+void countUp(int n) {
+    if (n == 0) return;
+    countUp(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    countUp(4);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2 3 4
+```
+
+### 16. **What is the output of the following program?**
+```c
+#include <stdio.h>
+int product(int n) {
+    if (n == 0) return 1;
+    return n * product(n - 1);
+}
+int main() {
+    printf("%d", product(5));
+    return 0;
+}
+```
+**Expected Output:**
+```
+120
+```
+
+### 17. **What will be the output of this program?**
+```c
+#include <stdio.h>
+void printNumbers(int n) {
+    if (n == 0) return;
+    printNumbers(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    printNumbers(2);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2
+```
+
+### 18. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    printf("%d", fibonacci(7));
+    return 0;
+}
+```
+**Expected Output:**
+```
+13
+```
+
+### 19. **What is the output of this program?**
+```c
+#include <stdio.h>
+void printPattern(int n) {
+    if (n == 0) return;
+    for (int i = 0; i < n; i++) {
+        printf("* ");
+    }
+    printf("\n");
+    printPattern(n - 1);
+}
+int main() {
+    printPattern(3);
+    return 0;
+}
+```
+**Expected Output:**
+```
+* * * 
+* * 
+* 
+```
+
+### 20. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int reverse(int n) {
+    if (n == 0) return 0;
+    return n % 10 + reverse(n / 10) * 10;
+}
+int main() {
+    printf("%d", reverse(432));
+    return 0;
+}
+```
+**Expected Output:**
+```
+234
+```
+
+### 21. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int sum(int n) {
+    if (n == 0) return 0;
+    return n + sum(n - 1);
+}
+int main() {
+    printf("%d", sum(5));
+    return 0;
+}
+```
+**Expected Output:**
+```
+15
+```
+
+### 22. **What is the output of the following program?**
+```c
+#include <stdio.h>
+int sumDigits(int n) {
+    if (n == 0) return 0;
+    return n % 10 + sumDigits(n / 10);
+}
+int main() {
+    printf("%d", sumDigits(9876));
+    return 0;
+}
+```
+**Expected Output:**
+```
+30
+```
+
+### 23. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+int main() {
+    printf("%d", power(3, 2));
+    return 0;
+}
+```
+**Expected Output:**
+```
+9
+```
+
+### 24. **What is the output of the following program?**
+```c
+#include <stdio.h>
+int factorial(int n) {
+    if (n == 1) return 1;
+    return n * factorial(n - 1);
+}
+int main() {
+    printf("%d", factorial(6));
+    return 0;
+}
+```
+**Expected Output:**
+```
+720
+```
+
+### 25. **What is the output of the following program?**
+```c
+#include <stdio.h>
+void print(int n) {
+    if (n == 0) return;
+    print(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    print(2);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2
+```
+
+### 26. **What will be the output of this program?**
+```c
+#include <stdio.h>
+int reverse(int n) {
+    if (n == 0) return 0;
+    return reverse(n / 10) * 10 + n % 10;
+}
+int main() {
+    printf("%d", reverse(12345));
+    return 0;
+}
+```
+**Expected Output:**
+```
+54321
+```
+
+### 27. **What is the output of the following program?**
+```c
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    printf("%d", fibonacci(10));
+    return 0;
+}
+```
+**Expected Output:**
+```
+55
+```
+
+### 28. **What will be the output of the following program?**
+```c
+#include <stdio.h>
+int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+int main() {
+    printf("%d", factorial(7));
+    return 0;
+}
+```
+**Expected Output:**
+```
+5040
+```
+
+### 29. **What is the output of this program?**
+```c
+#include <stdio.h>
+int sum(int n) {
+    if (n == 0) return 0;
+    return sum(n - 1) + n;
+}
+int main() {
+    printf("%d", sum(4));
+    return 0;
+}
+```
+**Expected Output:**
+```
+10
+```
+
+### 30. **What will the following code print?**
+```c
+#include <stdio.h>
+void printNumbers(int n) {
+    if (n == 0) return;
+    printNumbers(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    printNumbers(5);
+    return 0;
+}
+```
+**Expected Output:**
+```
+1 2 3 4 5
+```
+
+These recursive questions cover a range of basic to advanced recursion patterns, including summation, factorial, Fibonacci sequence, string manipulation, and reversing numbers.

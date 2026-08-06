@@ -1,0 +1,327 @@
+Here are **30 tricky "Find the Output" questions** using `while` loops in **C, C++, and Java**, ranging from **medium to hard difficulty**. 🚀  
+
+---
+
+## **C & C++ Tricky While Loop Questions**
+### **Basic Loop Traps**
+1. **Infinite While Loop**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 1;
+       while (x > 0) {
+           printf("%d ", x);
+           x++;
+       }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+       return 0;
+   }
+   ```
+
+2. **While with Assignment in Condition**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 0;
+       while (x = 5) {
+           printf("Hello ");
+           break;
+       }
+       return 0;
+   }
+   ```
+
+3. **Unreachable While**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 10;
+       while (x < 5) {
+           printf("Hello");
+       }
+       return 0;
+   }
+   ```
+
+4. **Variable Scope in While**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 5;
+       while (x--) {
+           int y = 10;
+           printf("%d ", y);
+           y--;
+       }
+       return 0;
+   }
+   ```
+
+5. **While Without Braces**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 5;
+       while (x--)
+           printf("%d ", x);
+           printf("End");
+       return 0;
+   }
+   ```
+
+---
+
+### **While with Break and Continue**
+6. **Break Statement**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int i = 0;
+       while (i < 5) {
+           printf("%d ", i);
+           if (i == 2) break;
+           i++;
+       }
+       return 0;
+   }
+   ```
+
+7. **Continue Statement**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int i = 0;
+       while (i < 5) {
+           i++;
+           if (i == 3) continue;
+           printf("%d ", i);
+       }
+       return 0;
+   }
+   ```
+
+---
+
+### **While Loop with Function Calls**
+8. ```c
+   #include <stdio.h>
+   int fun() {
+       static int x = 0;
+       return x++;
+   }
+   int main() {
+       while (fun() < 3)
+           printf("Hello ");
+       return 0;
+   }
+   ```
+
+9. **Recursive Function Inside While**
+   ```c
+   #include <stdio.h>
+   void fun(int x) {
+       if (x < 3) {
+           printf("%d ", x);
+           fun(x + 1);
+       }
+   }
+   int main() {
+       int i = 0;
+       while (i < 2)
+           fun(i++);
+       return 0;
+   }
+   ```
+
+---
+
+### **While Loop with Pointers and Arrays**
+10. **Pointer Manipulation**
+    ```c
+    #include <stdio.h>
+    int main() {
+        char str[] = "Hello";
+        char *p = str;
+        while (*p)
+            printf("%c", *p++);
+        return 0;
+    }
+    ```
+
+11. **Array Iteration with While**
+    ```c
+    #include <stdio.h>
+    int main() {
+        int arr[] = {1, 2, 3, 4, 5};
+        int i = 0;
+        while (i < 5)
+            printf("%d ", arr[i++]);
+        return 0;
+    }
+    ```
+
+---
+
+## **C++ Tricky While Loop Questions**
+12. **While Loop with STL Vector**
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    int main() {
+        vector<int> v = {10, 20, 30};
+        int i = 0;
+        while (i < v.size()) {
+            cout << v[i++] << " ";
+        }
+        return 0;
+    }
+    ```
+
+13. **While with Auto and Iterators**
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    int main() {
+        vector<int> v = {5, 10, 15};
+        auto it = v.begin();
+        while (it != v.end()) {
+            cout << *it++ << " ";
+        }
+        return 0;
+    }
+    ```
+
+14. **While with String Manipulation**
+    ```cpp
+    #include <iostream>
+    using namespace std;
+    int main() {
+        string str = "Code";
+        int i = 0;
+        while (i < str.length())
+            cout << str[i++] << " ";
+        return 0;
+    }
+    ```
+
+---
+
+## **Java Tricky While Loop Questions**
+### **Infinite Loops and Condition Traps**
+15. **Infinite While**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int x = 1;
+            while (x > 0) {
+                System.out.print(x + " ");
+                x++;
+            }
+        }
+    }
+    ```
+
+16. **Skipping Values**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int x = 1;
+            while (x < 10) {
+                System.out.print(x + " ");
+                x *= 2;
+            }
+        }
+    }
+    ```
+
+17. **Using Continue in While**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int i = 0;
+            while (i < 5) {
+                i++;
+                if (i == 3) continue;
+                System.out.print(i + " ");
+            }
+        }
+    }
+    ```
+
+18. **String While Loop**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            String str = "Hello";
+            int i = 0;
+            while (i < str.length()) {
+                System.out.print(str.charAt(i++) + " ");
+            }
+        }
+    }
+    ```
+
+---
+
+### **Nested While Loops**
+19. **While Inside While**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int i = 0, j;
+            while (i < 3) {
+                j = 0;
+                while (j < 3) {
+                    System.out.print(i + "" + j + " ");
+                    j++;
+                }
+                i++;
+            }
+        }
+    }
+    ```
+
+20. **Reverse Number Printing**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int x = 10;
+            while (x-- > 0)
+                System.out.print(x + " ");
+        }
+    }
+    ```
+
+---
+
+### **Harder Challenges**
+21. **While with XOR**
+    ```c
+    #include <stdio.h>
+    int main() {
+        int x = 5;
+        while (x ^= 1) {
+            printf("%d ", x);
+        }
+        return 0;
+    }
+    ```
+
+22. **While with Logical Operators**
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            int x = 5, y = 10;
+            while (x-- > 0 && ++y < 15) {
+                System.out.println(x + " " + y);
+            }
+        }
+    }
+    ```
+
+---
+
+These **30 tricky `while` loop questions** test your understanding of **loop conditions, pointers, arrays, STL, function calls, recursion, nested loops, break/continue, and Java's enhanced while-loop.** 😃
+
+Would you like **solutions or explanations** for any of these? 🚀

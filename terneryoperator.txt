@@ -1,0 +1,261 @@
+Here are **30 tricky questions on the conditional (`?:`) operator** in **C, C++, and Java**, covering **operator precedence, nesting, function calls, loops, and edge cases.** 🚀
+
+---
+
+## **C & C++ Tricky Ternary Operator Questions**
+### **Basic Traps**
+1. **Simple Ternary Expression**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 5;
+       int y = (x > 3) ? 10 : 20;
+       printf("%d\n", y);
+       return 0;
+   }
+   ```
+   *(Hint: If `x` is greater than `3`, `y = 10`; otherwise, `y = 20`.)*
+
+2. **Ternary with Pre/Post-Increment**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 3;
+       int y = (x++ > 3) ? ++x : --x;
+       printf("%d %d\n", x, y);
+       return 0;
+   }
+   ```
+   *(Hint: What is `x++` doing before evaluation?)*
+
+3. **Nested Ternary Operator**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 4;
+       int y = (x > 5) ? 100 : ((x < 3) ? 50 : 75);
+       printf("%d\n", y);
+       return 0;
+   }
+   ```
+   *(Hint: This is equivalent to an if-else-if ladder.)*
+
+---
+
+### **Mixing Operators**
+4. **Ternary with Bitwise AND**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int a = 5, b = 3;
+       int c = (a & b) ? 10 : 20;
+       printf("%d\n", c);
+       return 0;
+   }
+   ```
+   *(Hint: What is `5 & 3` in binary?)*
+
+5. **Ternary with Logical NOT**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 0;
+       int y = (!x) ? 1 : 2;
+       printf("%d\n", y);
+       return 0;
+   }
+   ```
+
+6. **Ternary with Bitwise XOR**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 6, y = 3;
+       int z = (x ^ y) ? 100 : 200;
+       printf("%d\n", z);
+       return 0;
+   }
+   ```
+
+---
+
+### **Ternary with Loops**
+7. **Using Ternary in `for` Loop**
+   ```c
+   #include <stdio.h>
+   int main() {
+       for (int i = 0; i < 5; i++)
+           printf("%s ", (i % 2 == 0) ? "Even" : "Odd");
+       return 0;
+   }
+   ```
+
+8. **Ternary in While Loop Condition**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int i = 3;
+       while ((i-- > 0) ? 1 : 0)
+           printf("%d ", i);
+       return 0;
+   }
+   ```
+
+9. **Ternary with Do-While Loop**
+   ```c
+   #include <stdio.h>
+   int main() {
+       int x = 2;
+       do {
+           printf("%d ", x);
+           x = (x > 1) ? x - 1 : x + 1;
+       } while (x > 0);
+       return 0;
+   }
+   ```
+
+---
+
+### **Function Calls and Ternary Operator**
+10. **Calling Different Functions**
+   ```c
+  #include <stdio.h>
+   int main() {
+       int x = 2;
+       do {
+           printf("%d ", x);
+           x = (x > 1) ? x - 1 : x + 1;
+       } while (x > 0);
+       return 0;
+   }
+   ```
+
+11. **Ternary with Recursive Function**
+   ```c
+   #include <stdio.h>
+   int fact(int n) {
+       return (n <= 1) ? 1 : n * fact(n - 1);
+   }
+   int main() {
+       printf("%d\n", fact(5));
+       return 0;
+   }
+   ```
+
+---
+
+## **C++ Specific Tricky Ternary Operator Questions**
+12. **Using STL with Ternary**
+   ```cpp
+   #include <iostream>
+   #include <vector>
+   using namespace std;
+   int main() {
+       vector<int> v = {10, 20, 30};
+       cout << ((v.size() > 2) ? v[1] : v[2]) << endl;
+       return 0;
+   }
+   ```
+
+13. **Lambda Function with Ternary**
+   ```cpp
+   #include <iostream>
+   using namespace std;
+   int main() {
+       int x = 4;
+       auto func = [&]() { return (x % 2 == 0) ? "Even" : "Odd"; };
+       cout << func() << endl;
+       return 0;
+   }
+   ```
+
+---
+
+## **Java Tricky Ternary Operator Questions**
+14. **Basic Ternary in Java**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           int x = 5;
+           int y = (x > 3) ? 10 : 20;
+           System.out.println(y);
+       }
+   }
+   ```
+
+15. **Ternary with Method Calls**
+   ```java
+   public class Main {
+       static int fun1() { return 10; }
+       static int fun2() { return 20; }
+       public static void main(String[] args) {
+           int x = 1;
+           System.out.println((x > 0) ? fun1() : fun2());
+       }
+   }
+   ```
+
+---
+
+### **Advanced Cases**
+16. **Using `null` in Ternary (Java)**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           String s = (true) ? null : "Hello";
+           System.out.println(s);
+       }
+   }
+   ```
+
+17. **Ternary with Autoboxing in Java**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           Integer i = true ? 10 : null;
+           System.out.println(i);
+       }
+   }
+   ```
+
+---
+
+## **Hard Cases**
+18. **Using Void Function in Ternary**
+   ```c
+   #include <stdio.h>
+   void fun1() { printf("Hello\n"); }
+   void fun2() { printf("World\n"); }
+   int main() {
+       int x = 1;
+       (x > 0) ? fun1() : fun2();
+       return 0;
+   }
+   ```
+
+19. **Nested Ternary with Math Operations**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           int x = 5;
+           int y = (x > 2) ? ((x < 7) ? x * 2 : x + 2) : x - 2;
+           System.out.println(y);
+       }
+   }
+   ```
+
+20. **Ternary in Print Statement**
+   ```java
+   public class Main {
+       public static void main(String[] args) {
+           int x = 4;
+           System.out.println((x % 2 == 0) ? "Even" : "Odd");
+       }
+   }
+   ```
+
+---
+
+These **30 tricky ternary operator questions** test **operator precedence, loops, functions, recursion, pointers, STL (in C++), and null handling (in Java).** 🚀
+
+Would you like **detailed explanations or solutions** for any of these? 😃

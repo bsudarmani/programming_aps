@@ -1,0 +1,699 @@
+Here are **30 medium to high-level C programming questions** related to **pointers to functions**, **structures**, **arrays**, and **strings**, along with explanations of the expected outputs for each:
+
+---
+
+### **1. What will be the output of the following code?**
+```c
+#include <stdio.h>
+
+void printMessage() {
+    printf("Message from function pointer!\n");
+}
+
+int main() {
+    void (*ptr)() = printMessage;
+    ptr();  // Call the function through pointer
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Message from function pointer!
+```
+Explanation: The function `printMessage` is called using a pointer `ptr` to the function.
+
+---
+
+### **2. What is the output of the following program?**
+```c
+#include <stdio.h>
+
+struct Point {
+    int x;
+    int y;
+};
+
+void printPoint(struct Point *p) {
+    printf("x = %d, y = %d\n", p->x, p->y);
+}
+
+int main() {
+    struct Point p = {5, 10};
+    struct Point *ptr = &p;
+    printPoint(ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+x = 5, y = 10
+```
+Explanation: The structure `p` is passed to the function `printPoint` using a pointer.
+
+---
+
+### **3. What will be the output of this program?**
+```c
+#include <stdio.h>
+
+void multiply(int *a, int *b) {
+    *a = *a * *b;
+}
+
+int main() {
+    int x = 2, y = 3;
+    multiply(&x, &y);
+    printf("x = %d, y = %d\n", x, y);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+x = 6, y = 3
+```
+Explanation: The function `multiply` multiplies the values pointed to by `a` and `b`, updating the value of `x`.
+
+---
+
+### **4. What will the following program output?**
+```c
+#include <stdio.h>
+
+int sum(int *a, int *b) {
+    return *a + *b;
+}
+
+int main() {
+    int x = 4, y = 5;
+    printf("Sum = %d\n", sum(&x, &y));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Sum = 9
+```
+Explanation: The function `sum` adds the values of `x` and `y` by dereferencing their pointers.
+
+---
+
+### **5. What will be the output of the following code?**
+```c
+#include <stdio.h>
+
+int arr[] = {1, 2, 3, 4, 5};
+
+void printArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", *(arr + i));
+    }
+}
+
+int main() {
+    printArray(arr, 5);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+1 2 3 4 5
+```
+Explanation: The array is passed to the function `printArray` using a pointer, and elements are printed by dereferencing the pointer.
+
+---
+
+### **6. What is the output of the following program?**
+```c
+#include <stdio.h>
+
+void modify(int *a) {
+    *a = 100;
+}
+
+int main() {
+    int num = 10;
+    modify(&num);
+    printf("%d\n", num);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+100
+```
+Explanation: The function `modify` modifies the value of `num` through the pointer.
+
+---
+
+### **7. What will the following code output?**
+```c
+#include <stdio.h>
+
+struct Data {
+    int a;
+    float b;
+};
+
+int main() {
+    struct Data d = {10, 3.14};
+    struct Data *ptr = &d;
+    printf("%d %.2f\n", ptr->a, ptr->b);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+10 3.14
+```
+Explanation: The structure is accessed using a pointer, and the values are printed using the `->` operator.
+
+---
+
+### **8. What will be the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[3] = {10, 20, 30};
+    int *ptr = arr;
+    printf("%d\n", *(ptr + 2));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+30
+```
+Explanation: The pointer `ptr` is incremented by 2 to point to the third element of the array.
+
+---
+
+### **9. What will the following code output?**
+```c
+#include <stdio.h>
+
+void increment(int *x) {
+    (*x)++;
+}
+
+int main() {
+    int a = 5;
+    increment(&a);
+    printf("%d\n", a);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+6
+```
+Explanation: The function `increment` increases the value of `a` by 1 via the pointer.
+
+---
+
+### **10. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30};
+    int *ptr = arr;
+    ptr++;
+    printf("%d\n", *ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+20
+```
+Explanation: The pointer `ptr` is incremented to point to the second element of the array.
+
+---
+
+### **11. What will the following program output?**
+```c
+#include <stdio.h>
+
+void modifyString(char *str) {
+    str[0] = 'H';
+}
+
+int main() {
+    char str[] = "hello";
+    modifyString(str);
+    printf("%s\n", str);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Hello
+```
+Explanation: The first character of the string `str` is modified by the function `modifyString`.
+
+---
+
+### **12. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    char str[] = "C programming";
+    char *ptr = str;
+    printf("%c\n", *(ptr + 2));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+p
+```
+Explanation: `ptr + 2` points to the character `'p'` in the string.
+
+---
+
+### **13. What will the following code print?**
+```c
+#include <stdio.h>
+
+int main() {
+    char str[] = "Hello, World!";
+    char *ptr = str;
+    ptr += 7;
+    printf("%s\n", ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+World!
+```
+Explanation: The pointer `ptr` is moved to the 7th character, which points to `"World!"`.
+
+---
+
+### **14. What will the following program output?**
+```c
+#include <stdio.h>
+
+void changeValue(int *x) {
+    *x = *x + 5;
+}
+
+int main() {
+    int a = 10;
+    changeValue(&a);
+    printf("%d\n", a);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+15
+```
+Explanation: The value of `a` is changed by adding 5 inside the function.
+
+---
+
+### **15. What will the following code output?**
+```c
+#include <stdio.h>
+
+int sum(int arr[], int size) {
+    int total = 0;
+    for (int i = 0; i < size; i++) {
+        total += arr[i];
+    }
+    return total;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int result = sum(arr, 5);
+    printf("Sum = %d\n", result);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Sum = 15
+```
+Explanation: The function `sum` calculates the sum of the array elements.
+
+---
+
+### **16. What will the following program output?**
+```c
+#include <stdio.h>
+
+void printArray(int arr[3]) {
+    for (int i = 0; i < 3; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    int arr[] = {10, 20, 30};
+    printArray(arr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+10 20 30
+```
+Explanation: The array is passed to the function and printed element by element.
+
+---
+
+### **17. What is the output of the following program?**
+```c
+#include <stdio.h>
+
+void printString(char *str) {
+    while (*str != '\0') {
+        printf("%c", *str);
+        str++;
+    }
+}
+
+int main() {
+    char str[] = "Hello";
+    printString(str);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Hello
+```
+Explanation: The string is printed one character at a time using a pointer.
+
+---
+
+### **18. What is the output of this program?**
+```c
+#include <stdio.h>
+
+void updateValue(int *x) {
+    *x = *x * 2;
+}
+
+int main() {
+    int a = 3;
+    updateValue(&a);
+    printf("%d\n", a);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+6
+```
+Explanation: The value of `a` is doubled inside the function.
+
+---
+
+### **19. What will the following code output?**
+```c
+#include <stdio.h>
+
+int main() {
+    char str[] = "abc";
+    char *ptr = str;
+    ptr += 2;
+    printf("%s\n", ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+c
+```
+Explanation: The pointer `ptr` is moved to point to the last character `'c'`.
+
+---
+
+### **20. What will the following program print?**
+```c
+#include <stdio.h>
+
+void modifyArray(int arr[]) {
+    arr[0] = 100;
+}
+
+int main() {
+    int arr[] = {10, 20, 30};
+    modifyArray(arr);
+    printf("%d\n", arr[0]);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+100
+```
+Explanation: The function `modifyArray` modifies the first element of the array.
+
+---
+
+### **21. What is the output of this code?**
+```c
+#include <stdio.h>
+
+int* getArray() {
+    static int arr[] = {1, 2, 3};
+    return arr;
+}
+
+int main() {
+    int *ptr = getArray();
+    printf("%d\n", *(ptr + 1));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+2
+```
+Explanation: The function `getArray` returns a pointer to the static array, and the second element is accessed using pointer arithmetic.
+
+---
+
+### **22. What will the output be?**
+```c
+#include <stdio.h>
+
+void increment(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i]++;
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4};
+    increment(arr, 4);
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+2 3 4 5
+```
+Explanation: Each element in the array is incremented by 1.
+
+---
+
+### **23. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int* returnPointer() {
+    int x = 10;
+    return &x;  // Dangerous: returning address of local variable
+}
+
+int main() {
+    int* ptr = returnPointer();
+    printf("%d\n", *ptr);  // Undefined behavior
+    return 0;
+}
+```
+**Answer:**
+The output will be **undefined behavior**. 
+Explanation: Returning a pointer to a local variable (`x`) is dangerous because `x` goes out of scope when the function returns.
+
+---
+
+### **24. What will be the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    char str[] = "abc";
+    char *ptr = str;
+    printf("%p %p\n", (void*)str, (void*)ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will print the memory addresses of the string `str` and pointer `ptr`, which should be the same:
+```
+<address> <address>
+```
+Explanation: Both `str` and `ptr` point to the same location, the first element of the string.
+
+---
+
+### **25. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    char *str1 = "Hello";
+    char *str2 = "Hello";
+    if (str1 == str2) {
+        printf("Same");
+    } else {
+        printf("Different");
+    }
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Same
+```
+Explanation: String literals with the same content often share the same memory location due to string interning.
+
+---
+
+### **26. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[3] = {10, 20, 30};
+    int *ptr = arr;
+    printf("%d %d\n", *(ptr + 1), *(ptr + 2));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+20 30
+```
+Explanation: Pointer arithmetic accesses the second and third elements of the array.
+
+---
+
+### **27. What is the output of the following code?**
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30};
+    int *ptr = arr;
+    printf("%d\n", *(ptr + 1));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+20
+```
+Explanation: The pointer is incremented to the second element.
+
+---
+
+### **28. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int *ptr = arr[0];
+    printf("%d\n", *(ptr + 4));
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+5
+```
+Explanation: The pointer `ptr` points to the first row, and pointer arithmetic accesses the element `arr[1][1]`.
+
+---
+
+### **29. What will this program output?**
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 5;
+    int *ptr = &a;
+    (*ptr)++;
+    printf("%d\n", a);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+6
+```
+Explanation: The value of `a` is incremented via the pointer `ptr`.
+
+---
+
+### **30. What is the output of this program?**
+```c
+#include <stdio.h>
+
+int main() {
+    char *str = "Hello";
+    char **ptr = &str;
+    printf("%s\n", *ptr);
+    return 0;
+}
+```
+**Answer:**
+The output will be:
+```
+Hello
+```
+Explanation: The pointer `ptr` points to the string `str`, which is dereferenced to print `"Hello"`.
+
+--- 
+
+These questions cover various C programming concepts related to **pointers**, **arrays**, **structures**, and **strings**.

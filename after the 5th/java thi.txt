@@ -1,0 +1,169 @@
+Awesome! Here's **Part 1** of your **Very Tricky Java Output-Based Questions (Zoho-style)** — **10 hard-level questions** to challenge your brain.
+
+---
+
+### 🔥 Tricky Java Output Questions – Set 1 of 3
+
+---
+
+**1️⃣ String == Trap**
+```java
+public class Test {
+    public static void main(String[] args) {
+        String a = "Hello";
+        String b = new String("Hello");
+        System.out.println(a == b);
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**2️⃣ Static Block Before Main**
+```java
+public class Demo {
+    static {
+        System.out.println("Static Block");
+    }
+    public static void main(String[] args) {
+        System.out.println("Main Method");
+    }
+}
+```
+**Q: What will be the output?**
+
+---
+
+**3️⃣ Return in try-catch-finally**
+```java
+public class Test {
+    public static int fun() {
+        try {
+            return 1;
+        } catch (Exception e) {
+            return 2;
+        } finally {
+            return 3;
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(fun());
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**4️⃣ Null instanceof Check**
+```java
+public class Main {
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println(s instanceof String);
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**5️⃣ Unreachable Code**
+```java
+public class Main {
+    public static void main(String[] args) {
+        while (true) {
+            break;
+        }
+        System.out.println("Hello");
+    }
+}
+```
+**Q: Will it compile? If yes, what’s the output?**
+
+---
+
+**6️⃣ Double Dot Decimal**
+```java
+public class Main {
+    public static void main(String[] args) {
+        double d = 1..0;
+        System.out.println(d);
+    }
+}
+```
+**Q: What will be the result?**
+
+---
+
+**7️⃣ StringBuilder vs String Equality**
+```java
+public class Main {
+    public static void main(String[] args) {
+        String s = "abc";
+        StringBuilder sb = new StringBuilder("abc");
+        System.out.println(s.equals(sb));
+    }
+}
+```
+**Q: What will be the output?**
+
+---
+
+**8️⃣ Math.max with characters**
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Math.max('a', 90));
+    }
+}
+```
+**Q: What will be printed?**
+
+---
+
+**9️⃣ Final Array Content**
+```java
+public class Main {
+    public static void main(String[] args) {
+        final int[] arr = {1, 2, 3};
+        arr[0] = 100;
+        System.out.println(arr[0]);
+    }
+}
+```
+**Q: Will it compile? What’s the output?**
+
+---
+
+**🔟 Static Method Hiding**
+```java
+class Parent {
+    static void greet() {
+        System.out.println("Hello from Parent");
+    }
+}
+
+class Child extends Parent {
+    static void greet() {
+        System.out.println("Hello from Child");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.greet();
+    }
+}
+```
+**Q: What will be the output?**
+
+---
+
+Would you like the **next 10 tricky questions (11–20)** now?
+
+Or should I include **answers + explanations** for these first?
+
+Let me know how you'd like to learn — quiz style, flashcards, PDF sheet, or just pure practice.

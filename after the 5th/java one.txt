@@ -1,0 +1,475 @@
+Here are **30 tricky Java output-based questions** with proper syntax formatting. These are designed to test your knowledge of **Java's behavior, flow, memory model, and quirks**. You can try them in your IDE or online Java compiler.
+
+---
+
+### ✅ 1. Static Block Execution Order
+```java
+class A {
+    static {
+        System.out.println("Static block A");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main A");
+    }
+}
+```
+
+---
+
+### ✅ 2. Static Variable Modification
+```java
+class A {
+    static int x = 10;
+
+    static {
+        x += 5;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+### ✅ 3. Post and Pre Increment
+```java
+public class Test {
+    public static void main(String[] args) {
+        int a = 10;
+        a = a++ + ++a;
+        System.out.println(a);
+    }
+}
+```
+
+---
+
+### ✅ 4. String == vs .equals()
+```java
+class Test {
+    public static void main(String[] args) {
+        String s1 = "abc";
+        String s2 = new String("abc");
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+    }
+}
+```
+
+---
+
+### ✅ 5. String + int + String
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(10 + 20 + "30" + 40 + 50);
+    }
+}
+```
+
+---
+
+### ✅ 6. Variable Shadowing with super
+```java
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    void print() {
+        System.out.println(x);
+        System.out.println(super.x);
+    }
+
+    public static void main(String[] args) {
+        new Child().print();
+    }
+}
+```
+
+---
+
+### ✅ 7. Operator Precedence
+```java
+class Example {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = x++ * ++x;
+        System.out.println(y);
+    }
+}
+```
+
+---
+
+### ✅ 8. Constructor Chaining
+```java
+class A {
+    A() {
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+    B() {
+        super();
+        System.out.println("B");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new B();
+    }
+}
+```
+
+---
+
+### ✅ 9. Static and Instance Initializer Conflict
+```java
+class A {
+    static int x = 1111;
+
+    static {
+        x = x-- - --x;
+    }
+
+    {
+        x = x++ + ++x;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+### ✅ 10. ArrayIndexOutOfBoundsException
+```java
+class Test {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        System.out.println(arr[3]);
+    }
+}
+```
+
+---
+
+### ✅ 11. Static Initialization Order
+```java
+public class Test {
+    static int a = m1();
+
+    static int m1() {
+        System.out.println("Static method called");
+        return 20;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main");
+        System.out.println(a);
+    }
+}
+```
+
+---
+
+### ✅ 12. Integer Caching
+```java
+class A {
+    public static void main(String[] args) {
+        Integer i1 = 127;
+        Integer i2 = 127;
+        Integer i3 = 128;
+        Integer i4 = 128;
+        System.out.println(i1 == i2);
+        System.out.println(i3 == i4);
+    }
+}
+```
+
+---
+
+### ✅ 13. String Concatenation Order
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(10 + 20 + "Hello" + 10 + 20);
+    }
+}
+```
+
+---
+
+### ✅ 14. System.exit() in Static Block
+```java
+class A {
+    static {
+        System.out.println("Static block");
+        System.exit(0);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+}
+```
+
+---
+
+### ✅ 15. Compile-Time String Concatenation
+```java
+public class Test {
+    public static void main(String[] args) {
+        String str1 = "hello";
+        String str2 = "he" + "llo";
+        System.out.println(str1 == str2);
+    }
+}
+```
+
+---
+
+### ✅ 16. Finally Block Always Runs
+```java
+class Test {
+    public static void main(String[] args) {
+        try {
+            int x = 10 / 0;
+        } catch (Exception e) {
+            System.out.println("Catch block");
+        } finally {
+            System.out.println("Finally block");
+        }
+    }
+}
+```
+
+---
+
+### ✅ 17. Static Variables Shared Across Objects
+```java
+class Test {
+    static int x = 10;
+
+    public static void main(String[] args) {
+        Test t1 = new Test();
+        t1.x = 20;
+        Test t2 = new Test();
+        System.out.println(t2.x);
+    }
+}
+```
+
+---
+
+### ✅ 18. NullPointerException
+```java
+class Test {
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println(s.length());
+    }
+}
+```
+
+---
+
+### ✅ 19. Fallthrough in Switch
+```java
+class A {
+    public static void main(String[] args) {
+        for (int i = 0; i < 3; i++) {
+            switch (i) {
+                case 0: System.out.print("A "); break;
+                case 1: System.out.print("B ");
+                case 2: System.out.print("C ");
+            }
+        }
+    }
+}
+```
+
+---
+
+### ✅ 20. String Interning
+```java
+public class Test {
+    public static void main(String[] args) {
+        String s1 = "Java";
+        String s2 = new String("Java");
+        s2 = s2.intern();
+        System.out.println(s1 == s2);
+    }
+}
+```
+
+---
+
+### ✅ 21. Static and Instance Blocks
+```java
+class Test {
+    static int x = 10;
+
+    {
+        x += 20;
+    }
+
+    static {
+        x += 30;
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(x);
+    }
+}
+```
+
+---
+
+### ✅ 22. instanceof with null
+```java
+public class Test {
+    public static void main(String[] args) {
+        Object obj = null;
+        System.out.println(obj instanceof String);
+    }
+}
+```
+
+---
+
+### ✅ 23. Constructor Overloading and this()
+```java
+class A {
+    A() {
+        this(10);
+    }
+
+    A(int x) {
+        System.out.println("Value: " + x);
+    }
+
+    public static void main(String[] args) {
+        new A();
+    }
+}
+```
+
+---
+
+### ✅ 24. Assignment inside if condition
+```java
+public class Test {
+    public static void main(String[] args) {
+        boolean b = true;
+
+        if (b = false)
+            System.out.println("True");
+        else
+            System.out.println("False");
+    }
+}
+```
+
+---
+
+### ✅ 25. Operator Precedence
+```java
+class Test {
+    public static void main(String[] args) {
+        int i = 0;
+        i = i++ - --i + ++i;
+        System.out.println(i);
+    }
+}
+```
+
+---
+
+### ✅ 26. Double.MIN_VALUE
+```java
+class A {
+    public static void main(String[] args) {
+        System.out.println(Math.min(Double.MIN_VALUE, 0.0d));
+    }
+}
+```
+
+---
+
+### ✅ 27. String Reference Behavior
+```java
+public class Test {
+    public static void main(String[] args) {
+        String s1 = new String("abc");
+        String s2 = s1;
+        s1 = "def";
+        System.out.println(s2);
+    }
+}
+```
+
+---
+
+### ✅ 28. Post vs Pre Increment Mix
+```java
+class Test {
+    public static void main(String[] args) {
+        int a = 5, b = 5;
+        System.out.println(a++ + ++b);
+    }
+}
+```
+
+---
+
+### ✅ 29. Static and Instance Block Order
+```java
+public class Test {
+    static {
+        System.out.println("Static block");
+    }
+
+    {
+        System.out.println("Instance block");
+    }
+
+    Test() {
+        System.out.println("Constructor");
+    }
+
+    public static void main(String[] args) {
+        new Test();
+    }
+}
+```
+
+---
+
+### ✅ 30. String + int + String Output Trick
+```java
+class Test {
+    public static void main(String[] args) {
+        System.out.println(5 + 10 + "20" + 30 + 40);
+    }
+}
+```
+
+---
+
+Let me know if you'd like:
+- **Answers with explanations**
+- **PDF version**
+- **MCQ-style questions**
+- Or want me to test your answers one by one!

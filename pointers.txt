@@ -1,0 +1,330 @@
+Here are **30 medium-to-hard level questions** on **function pointers, structure pointers, and double pointers** in **C**. 🚀  
+
+---
+
+## **Function Pointers (10 Questions)**  
+### **1. Basic Function Pointer**
+```c
+#include <stdio.h>
+void display() { printf("Hello\n"); }
+int main() {
+    void (*ptr)() = display;
+    ptr();
+    return 0;
+}
+```
+🔹 *What is printed?*  
+
+---
+
+### **2. Function Pointer with Parameters**
+```c
+#include <stdio.h>
+void sum(int a, int b) { printf("%d\n", a + b); }
+int main() {
+    void (*ptr)(int, int) = sum;
+    ptr(3, 4);
+    return 0;
+}
+```
+🔹 *Find the output.*  
+
+---
+
+### **3. Array of Function Pointers**
+```c
+#include <stdio.h>
+void func1() { printf("Function 1\n"); }
+void func2() { printf("Function 2\n"); }
+int main() {
+    void (*arr[2])() = {func1, func2};
+    arr[1]();
+    return 0;
+}
+```
+🔹 *Which function executes?*  
+
+---
+
+### **4. Function Pointer Returning Pointer**
+```c
+#include <stdio.h>
+int* getVal(int x) {
+    static int val;
+    val = x * 2;
+    return &val;
+}
+int main() {
+    int *(*ptr)(int) = getVal;
+    printf("%d\n", *ptr(5));
+    return 0;
+}
+```
+🔹 *What value is printed?*  
+
+---
+
+### **5. Function Pointer as Argument**
+```c
+#include <stdio.h>
+void execute(void (*func)()) { func(); }
+void hello() { printf("Hello World\n"); }
+int main() {
+    execute(hello);
+    return 0;
+}
+```
+🔹 *What happens when execute is called?*  
+
+---
+
+### **6. Pointer to Function Returning Function Pointer**
+```c
+#include <stdio.h>
+typedef void (*func_ptr)();
+func_ptr wrapper() {
+    void inner() { printf("Inside inner\n"); }
+    return inner;
+}
+int main() {
+    func_ptr ptr = wrapper();
+    ptr();
+    return 0;
+}
+```
+🔹 *What gets executed?*  
+
+---
+
+### **7. Function Pointer Inside Structure**
+```c
+#include <stdio.h>
+struct Data {
+    void (*display)();
+};
+void show() { printf("Struct Function\n"); }
+int main() {
+    struct Data obj;
+    obj.display = show;
+    obj.display();
+    return 0;
+}
+```
+🔹 *What function is executed?*  
+
+---
+
+### **8. Function Pointer in Array Operations**
+```c
+#include <stdio.h>
+int add(int a, int b) { return a + b; }
+int multiply(int a, int b) { return a * b; }
+int main() {
+    int (*op[2])(int, int) = {add, multiply};
+    printf("%d\n", op[1](4, 5));
+    return 0;
+}
+```
+🔹 *Find the output.*  
+
+---
+
+### **9. Indirect Function Call**
+```c
+#include <stdio.h>
+void func() { printf("Indirect Call\n"); }
+int main() {
+    void (*fptr)() = func;
+    void (**pptr)() = &fptr;
+    (*pptr)();
+    return 0;
+}
+```
+🔹 *What does `(*pptr)()` do?*  
+
+---
+
+### **10. Function Pointer with Dynamic Memory**
+```c
+#include <stdio.h>
+#include <stdlib.h>
+void printMessage() { printf("Dynamic Call\n"); }
+int main() {
+    void (**dptr)() = malloc(sizeof(void (*)()));
+    *dptr = printMessage;
+    (*dptr)();
+    free(dptr);
+    return 0;
+}
+```
+🔹 *What happens dynamically?*  
+
+---
+
+## **Structure Pointers (10 Questions)**
+### **11. Structure Pointer Basics**
+```c
+#include <stdio.h>
+struct Student {
+    int id;
+};
+int main() {
+    struct Student s = {101};
+    struct Student *ptr = &s;
+    printf("%d\n", ptr->id);
+    return 0;
+}
+```
+🔹 *Find the output.*  
+
+---
+
+### **12. Structure Pointer and Function**
+```c
+#include <stdio.h>
+struct Employee {
+    int id;
+};
+void update(struct Employee *e) { e->id = 202; }
+int main() {
+    struct Employee emp = {101};
+    update(&emp);
+    printf("%d\n", emp.id);
+    return 0;
+}
+```
+🔹 *What value gets printed?*  
+
+---
+
+### **13. Structure Array with Pointers**
+```c
+#include <stdio.h>
+struct Point {
+    int x, y;
+};
+int main() {
+    struct Point arr[] = {{1, 2}, {3, 4}, {5, 6}};
+    struct Point *ptr = arr;
+    printf("%d %d\n", (ptr + 1)->x, (ptr + 2)->y);
+    return 0;
+}
+```
+🔹 *Which values are accessed?*  
+
+---
+
+### **14. Self-Referencing Structure**
+```c
+#include <stdio.h>
+struct Node {
+    int data;
+    struct Node *next;
+};
+int main() {
+    struct Node n1 = {10, NULL};
+    struct Node n2 = {20, &n1};
+    printf("%d\n", n2.next->data);
+    return 0;
+}
+```
+🔹 *Find the output.*  
+
+---
+
+### **15. Dynamic Memory Allocation**
+```c
+#include <stdio.h>
+#include <stdlib.h>
+struct Item {
+    int value;
+};
+int main() {
+    struct Item *ptr = malloc(sizeof(struct Item));
+    ptr->value = 50;
+    printf("%d\n", ptr->value);
+    free(ptr);
+    return 0;
+}
+```
+🔹 *What is stored dynamically?*  
+
+---
+
+## **Double Pointers (10 Questions)**
+### **16. Double Pointer Basics**
+```c
+#include <stdio.h>
+int main() {
+    int x = 10, *p = &x, **pp = &p;
+    printf("%d\n", **pp);
+    return 0;
+}
+```
+🔹 *Find the value printed.*  
+
+---
+
+### **17. Double Pointer and Function**
+```c
+#include <stdio.h>
+void modify(int **p) {
+    **p = 42;
+}
+int main() {
+    int a = 10, *ptr = &a;
+    modify(&ptr);
+    printf("%d\n", a);
+    return 0;
+}
+```
+🔹 *Find the final value of `a`.*  
+
+---
+
+### **18. Dynamic Memory with Double Pointers**
+```c
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int **ptr = malloc(sizeof(int *));
+    *ptr = malloc(sizeof(int));
+    **ptr = 99;
+    printf("%d\n", **ptr);
+    free(*ptr);
+    free(ptr);
+    return 0;
+}
+```
+🔹 *What value is dynamically allocated?*  
+
+---
+
+### **19. Pointer to Pointer Modification**
+```c
+#include <stdio.h>
+int main() {
+    int a = 5, *p = &a, **pp = &p;
+    *p = 20;
+    printf("%d\n", **pp);
+    return 0;
+}
+```
+🔹 *Find the output.*  
+
+---
+
+### **20. Triple Pointer Trick**
+```c
+#include <stdio.h>
+int main() {
+    int x = 5, *p = &x, **pp = &p, ***ppp = &pp;
+    printf("%d\n", ***ppp);
+    return 0;
+}
+```
+🔹 *What value does `***ppp` print?*  
+
+---
+
+🔥 **Need explanations for any question? Let me know!** 🚀

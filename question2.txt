@@ -1,0 +1,325 @@
+Here are 30 new questions covering various topics like pointers, strings, loops, recursion, control flow, and more:
+
+1. Pointer Arithmetic
+What is the output of the following code?
+c
+Copy
+Edit
+int arr[] = {10, 20, 30, 40};
+int *ptr = arr;
+printf("%d", *(ptr + 1));
+(Output: 20)
+2. String Pointer Manipulation
+What is the output of this code?
+c
+Copy
+Edit
+char str[] = "Hello";
+printf("%s", ++str);
+(Output: ello)
+3. For Loop and Break
+What will the following code print?
+c
+Copy
+Edit
+for (int i = 0; i < 5; i++) {
+    if (i == 3) break;
+    printf("%d ", i);
+}
+(Output: 0 1 2)
+4. Nested Loop
+What will the following code print?
+c
+Copy
+Edit
+for (int i = 1; i <= 2; i++) {
+    for (int j = 1; j <= 2; j++) {
+        printf("%d ", i * j);
+    }
+}
+(Output: 1 2 2 4)
+5. Function Pointer
+What will be printed by the following code?
+c
+Copy
+Edit
+int add(int a, int b) { return a + b; }
+int (*ptr)(int, int) = add;
+printf("%d", ptr(2, 3));
+(Output: 5)
+6. Structure Pointer
+What will be printed by this code?
+c
+Copy
+Edit
+struct Person {
+    char name[20];
+    int age;
+};
+struct Person p = {"John", 25};
+struct Person *ptr = &p;
+printf("%d", ptr->age);
+(Output: 25)
+7. String Comparison
+What is the output of this code?
+c
+Copy
+Edit
+char str1[] = "abc";
+char str2[] = "abc";
+if (strcmp(str1, str2) == 0) printf("Match");
+else printf("No Match");
+(Output: Match)
+8. Array and Pointer
+What is the output of this code?
+c
+Copy
+Edit
+int arr[] = {1, 2, 3, 4};
+int *ptr = arr;
+printf("%d", *(ptr + 2));
+(Output: 3)
+9. Recursion
+What is the output of this code?
+c
+Copy
+Edit
+int factorial(int n) {
+    if (n == 1) return 1;
+    return n * factorial(n - 1);
+}
+printf("%d", factorial(4));
+(Output: 24)
+10. Conditional Statements
+What will this code print?
+c
+Copy
+Edit
+int x = 5;
+if (x > 3) {
+    printf("Greater");
+} else {
+    printf("Smaller");
+}
+(Output: Greater)
+11. Increment and Decrement
+What is the output of this code?
+c
+Copy
+Edit
+int x = 5;
+printf("%d ", ++x);
+printf("%d", x++);
+(Output: 6 6)
+12. String Length
+What will this code print?
+c
+Copy
+Edit
+char str[] = "Programming";
+printf("%d", strlen(str));
+(Output: 11)
+13. Reverse a String Using Pointers
+What will this code output?
+c
+Copy
+Edit
+char str[] = "hello";
+char *ptr = str + strlen(str) - 1;
+while (ptr >= str) {
+    printf("%c", *ptr);
+    ptr--;
+}
+(Output: olleh)
+14. Pattern Printing
+What will be the output of this pattern?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= i; j++) {
+        printf("*");
+    }
+    printf("\n");
+}
+(Output:
+markdown
+Copy
+Edit
+*
+**
+***
+15. Multiple Loops
+What will this code print?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        printf("%d ", i * j);
+    }
+}
+(Output: 1 2 3 2 4 6 3 6 9)
+16. String Manipulation
+What is the result of this code?
+c
+Copy
+Edit
+char str[] = "Hello World!";
+str[6] = 'W';
+printf("%s", str);
+(Output: Hello World!)
+17. Structure and Pointer
+What is the output of this code?
+c
+Copy
+Edit
+struct Point {
+    int x, y;
+};
+struct Point pt = {1, 2};
+struct Point *ptr = &pt;
+printf("%d %d", ptr->x, ptr->y);
+(Output: 1 2)
+18. Array of Pointers
+What is the output of this code?
+c
+Copy
+Edit
+char *arr[] = {"Apple", "Banana", "Cherry"};
+printf("%s", *(arr + 1));
+(Output: Banana)
+19. Pointer to Function
+What is the output of this code?
+c
+Copy
+Edit
+int add(int a, int b) { return a + b; }
+int (*ptr)(int, int) = add;
+printf("%d", ptr(1, 2));
+(Output: 3)
+20. Pointer Dereferencing
+What will the output of this code be?
+c
+Copy
+Edit
+int a = 10;
+int *ptr = &a;
+printf("%d", *ptr);
+(Output: 10)
+21. Recursion with Base Case
+What will the output of this code be?
+c
+Copy
+Edit
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+printf("%d", power(2, 3));
+(Output: 8)
+22. String Pointer Arithmetic
+What will be printed by this code?
+c
+Copy
+Edit
+char str[] = "Example";
+printf("%c", *(str + 3));
+(Output: m)
+23. Decrement in Loop
+What will this code print?
+c
+Copy
+Edit
+for (int i = 5; i > 0; i--) {
+    printf("%d ", i);
+}
+(Output: 5 4 3 2 1)
+24. String Concatenation
+What will this code print?
+c
+Copy
+Edit
+char str1[20] = "Hello";
+char str2[] = " World!";
+strcat(str1, str2);
+printf("%s", str1);
+(Output: Hello World!)
+25. Control Flow with switch
+What will the output of this code be?
+c
+Copy
+Edit
+int x = 2;
+switch (x) {
+    case 1: printf("One"); break;
+    case 2: printf("Two"); break;
+    case 3: printf("Three"); break;
+    default: printf("Other");
+}
+(Output: Two)
+26. Simple Pointer Usage
+What will be printed by this code?
+c
+Copy
+Edit
+int a = 10;
+int *p = &a;
+*p = 20;
+printf("%d", a);
+(Output: 20)
+27. Array and Pointer Comparison
+What will this code print?
+c
+Copy
+Edit
+int arr[] = {1, 2, 3};
+int *p = arr;
+printf("%d", *(p + 1));
+(Output: 2)
+28. Nested Function Pointer
+What is the output of this code?
+c
+Copy
+Edit
+int add(int x, int y) { return x + y; }
+int multiply(int x, int y) { return x * y; }
+int (*func_ptr)(int, int);
+func_ptr = add;
+printf("%d", func_ptr(2, 3));
+(Output: 5)
+29. Pattern of Numbers
+What will be printed by this code?
+c
+Copy
+Edit
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= i; j++) {
+        printf("%d ", j);
+    }
+    printf("\n");
+}
+(Output:
+Copy
+Edit
+1
+1 2
+1 2 3
+30. Pointer to a Character
+What will this code print?
+c
+Copy
+Edit
+char str[] = "CProgramming";
+char *p = &str[2];
+printf("%s", p);
+(Output: oProgramming)
+These questions should provide a good mix of challenges and help test your understanding of core concepts.
+
+
+
+
+
+
+
+
